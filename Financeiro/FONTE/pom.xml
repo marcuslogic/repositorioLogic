@@ -10,5 +10,6 @@
   	<module>financeiro-ejb</module>
   	<module>financeiro-web</module>
   	<module>financeiro-ear</module>
+    <module>dao-ejb</module>
   </modules>
 </project>

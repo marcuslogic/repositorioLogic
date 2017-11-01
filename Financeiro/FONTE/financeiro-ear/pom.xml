@@ -30,6 +30,12 @@
 			<version>${project.version}</version>
 			<type>ejb</type>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>dao-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -50,9 +56,15 @@
 							<artifactId>financeiro-ejb</artifactId>
 							<bundleFileName>financeiro-ejb.jar</bundleFileName>
 						</ejbModule>
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>dao-ejb</artifactId>
+							<bundleFileName>dao-ejb.jar</bundleFileName>
+						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>financeiro-ear</finalName>
 	</build>
 </project>

@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>financeiro-ejb</artifactId>
+    <artifactId>dao-ejb</artifactId>
     <packaging>ejb</packaging>
-    <name>financeiro-ejb</name>
+    <name>dao-ejb</name>
     <url>http://maven.apache.org</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
