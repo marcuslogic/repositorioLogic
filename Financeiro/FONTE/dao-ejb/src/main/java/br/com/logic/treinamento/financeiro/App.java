@@ -1,11 +1,22 @@
 package br.com.logic.treinamento.financeiro;
 
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.ws.rs.Path;
+
 /**
  * Hello world!
  */
+@Stateless
+@Path("teste")
 public class App {
-    public static void main(String[] args) {
 
-        System.out.println("Hello World!");
+    @Inject
+    static ContaDAO dao;
+
+    public void teste() throws Exception {
+
+        dao.teste();
+
     }
 }
