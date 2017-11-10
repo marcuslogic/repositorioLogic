@@ -1,13 +1,13 @@
-package br.com.logic.treinamento.financeiro.model;
+package br.com.logic.treinamento.dao.model;
 
 import java.time.LocalDate;
 
-public class ContaMensal {
+public class SaidaModel {
     private int id;
     private String descricao;
     private LocalDate data;
     private double valor;
-    private int tipo;
+    private String tipo;
 
     public int getId() {
         return id;
@@ -41,11 +41,11 @@ public class ContaMensal {
         this.valor = valor;
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 }
