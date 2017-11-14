@@ -4,6 +4,7 @@ import br.com.logic.treinamento.dao.interfaces.ISaidaDao;
 import br.com.logic.treinamento.dao.model.SaidaModel;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.sql.Connection;
@@ -11,20 +12,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-@Stateless(mappedName = "SaidaDao")
+@Stateless
 public class SaidaDao implements ISaidaDao {
 
     @Inject
     Conexao persistFacatory;
 
-
-    @PostConstruct
-    public void teste2() throws Exception {
-        System.out.print("teste");
-    }
-
-
-    @Override
     public ArrayList<SaidaModel> getSaidas() throws Exception {
 
         //<editor-fold desc="Variáveis">
@@ -61,9 +54,6 @@ public class SaidaDao implements ISaidaDao {
 
         } catch (Exception e) {
             throw new Exception(e);
-        } finally {
-            ps.close();
-            rs.close();
         }
     }
 

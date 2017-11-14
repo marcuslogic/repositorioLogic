@@ -2,31 +2,21 @@ package br.com.logic.treinamento.financeiro.service;
 
 import br.com.logic.treinamento.dao.interfaces.ISaidaDao;
 import br.com.logic.treinamento.dao.model.SaidaModel;
+import br.com.logic.treinamento.financeiro.interfaces.ISaidaService;
 
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.ArrayList;
 
-public class SaidaService {
+@Stateless
+public class SaidaService implements ISaidaService{
 
     @Inject
-    private ISaidaDao saidaDao;
-
-    public ISaidaDao getSaidaDao() {
-        return saidaDao;
-    }
-
-    public void setSaidaDao(ISaidaDao saidaDao) {
-        this.saidaDao = saidaDao;
-    }
+    private ISaidaDao saidaBean;
 
     public ArrayList<SaidaModel> getTodasSaidas() throws Exception {
 
-
-        if (saidaDao != null) {
-            System.out.print(saidaDao.toString());
-        } else {
-            System.out.print("ta nulo");
-        }
-        return saidaDao.getSaidas();
+        System.out.print("teste");
+        return saidaBean.getSaidas();
     }
 }
