@@ -1,4 +1,4 @@
-package br.com.logic.treinamento.dao.enums;
+package br.com.logic.treinamento.financeiro.enums;
 
 public enum TipoLancamentoEnum {
     ALIMENTACAO("Alimentação"),

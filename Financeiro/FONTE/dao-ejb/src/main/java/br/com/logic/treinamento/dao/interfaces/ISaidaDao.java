@@ -9,4 +9,16 @@ import java.util.ArrayList;
 public interface ISaidaDao {
 
     public ArrayList<SaidaModel> getSaidas() throws Exception;
+
+    public SaidaModel insertSaida(SaidaModel saidaNova) throws Exception;
+
+    public SaidaModel updateSaida(SaidaModel saidaAlterada) throws Exception;
+
+    public SaidaModel deleteSaida(SaidaModel saidaRemocao) throws Exception;
+
+    public ArrayList<SaidaModel> getSaidasByData(SaidaModel saidaData) throws Exception;
+
+    public ArrayList<SaidaModel> getSaidasByDescricao(SaidaModel saidaDescricao) throws Exception;
+
+    public ArrayList<SaidaModel> getSaidasByTipo(SaidaModel saidaTipo) throws Exception;
 }

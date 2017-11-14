@@ -7,12 +7,12 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @Stateless
-public class Conexao {
+public class ConnectBean {
 
-    @Resource(lookup = "java:jboss/datasource/FinanceiroDB")
+    @Resource(name = "FinanceiroDB")
     private DataSource ds;
 
-    public Connection connect() throws SQLException {
+    public Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 }

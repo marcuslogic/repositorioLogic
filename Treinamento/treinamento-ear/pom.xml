@@ -9,18 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>treinamento-ear</artifactId>
-    <packaging>war</packaging>
+    <packaging>ear</packaging>
 
     <dependencies>
-        <!-- Java EE 7 dependency -->
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-            <scope>provided</scope>
+            <groupId>br.com.logic</groupId>
+            <artifactId>financeiro-ejb</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
-        <!-- WildFly Swarm Fractions -->
 
+        <dependency>
+            <groupId>br.com.logic</groupId>
+            <artifactId>dao-ejb</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
@@ -38,6 +42,25 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <modules>
+                        <jarModule>
+                            <groupId>br.com.logic</groupId>
+                            <artifactId>financeiro-ejb</artifactId>
+                            <bundleFileName>financeiro-ejb.jar</bundleFileName>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>br.com.logic</groupId>
+                            <artifactId>dao-ejb</artifactId>
+                            <bundleFileName>dao-ejb.jar</bundleFileName>
+                        </jarModule>
+                    </modules>
+                </configuration>
+
             </plugin>
         </plugins>
     </build>

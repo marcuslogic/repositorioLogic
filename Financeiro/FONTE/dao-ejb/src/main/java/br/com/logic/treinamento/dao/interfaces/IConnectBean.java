@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @Local
-public interface IConexao {
+public interface IConnectBean {
 
     public Connection connect() throws SQLException;
 }

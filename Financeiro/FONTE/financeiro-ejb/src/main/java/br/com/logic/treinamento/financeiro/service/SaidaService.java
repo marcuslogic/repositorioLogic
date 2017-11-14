@@ -16,7 +16,6 @@ public class SaidaService implements ISaidaService{
 
     public ArrayList<SaidaModel> getTodasSaidas() throws Exception {
 
-        System.out.print("teste");
         return saidaBean.getSaidas();
     }
 }
