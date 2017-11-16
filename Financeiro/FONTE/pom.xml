@@ -8,8 +8,8 @@
   <description>Projeto de Treinamento JavaEE</description>
   <modules>
   	<module>financeiro-ejb</module>
-  	<module>financeiro-web</module>
-  	<module>financeiro-ear</module>
+  	<module>treinamentoservice-web</module>
+  	<module>treinamento-ear</module>
     <module>dao-ejb</module>
   </modules>
 </project>
