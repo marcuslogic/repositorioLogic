@@ -9,7 +9,7 @@ import java.sql.SQLException;
 @Stateless
 public class ConnectBean {
 
-    @Resource(name = "FinanceiroDB")
+    @Resource(name = "TreinamentoDS")
     private DataSource ds;
 
     public Connection getConnection() throws SQLException {

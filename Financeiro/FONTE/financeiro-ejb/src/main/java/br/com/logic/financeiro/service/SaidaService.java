@@ -2,6 +2,7 @@ package br.com.logic.financeiro.service;
 
 import br.com.logic.dao.interfaces.ISaidaDao;
 import br.com.logic.dao.model.SaidaModel;
+import br.com.logic.financeiro.enums.TipoLancamentoEnum;
 import br.com.logic.financeiro.interfaces.ISaidaService;
 
 import javax.ejb.Stateless;
@@ -15,9 +16,9 @@ public class SaidaService implements ISaidaService {
     private ISaidaDao saidaBean;
 
     @Override
-    public ArrayList<SaidaModel> getSaidas() throws Exception {
+    public ArrayList<SaidaModel> obterTodasSaidas() throws Exception {
 
-        return saidaBean.getSaidas();
+        return saidaBean.obterTodasSaidas();
     }
 
     @Override
@@ -31,7 +32,7 @@ public class SaidaService implements ISaidaService {
             throw new Exception("Obrigatório informar a data.");
         }
 
-        if (saida.getDescricao() == null) {
+        if (saida.getNome() == null) {
             throw new Exception("Obrigatório informar a descrição.");
         }
 
@@ -66,7 +67,7 @@ public class SaidaService implements ISaidaService {
             throw new Exception("Obrigatório informar a data.");
         }
 
-        if (saida.getDescricao() == null) {
+        if (saida.getNome() == null) {
             throw new Exception("Obrigatório informar a descrição.");
         }
 
@@ -92,13 +93,12 @@ public class SaidaService implements ISaidaService {
 
     @Override
     public Boolean deletarSaida(SaidaModel saida) throws Exception {
-        Boolean sucesso = Boolean.FALSE;
 
-        if (saida.getId() == 0) {
+        if (saida.getId() < 0) {
             throw new Exception("Informe um código de saída válido.");
         }
 
-        sucesso = saidaBean.deletarSaida(saida);
+        return saidaBean.deletarSaida(saida);
     }
 
     @Override
@@ -112,24 +112,23 @@ public class SaidaService implements ISaidaService {
     }
 
     @Override
-    public ArrayList<SaidaModel> getSaidasByDescricao(SaidaModel saida) throws Exception {
-        if (saida.getData() == null) {
-            throw new Exception("Informe uma descrição válida.");
+    public ArrayList<SaidaModel> getSaidasByNome(SaidaModel saida) throws Exception {
+
+        if (saida.getNome() == null) {
+            throw new Exception("Informe um nome válido.");
         }
 
-        return saidaBean.getSaidasByData(saida);
+        return saidaBean.getSaidasByNome(saida);
     }
 
     @Override
     public ArrayList<SaidaModel> getSaidasByTipo(SaidaModel saida) throws Exception {
 
-        if (saida.getData() == null)
-
-        {
+        if (saida.getTipo() == null) {
             throw new Exception("Informe um tipo válido.");
         }
 
-        return saidaBean.getSaidasByData(saida);
+        return saidaBean.getSaidasByTipo(saida);
 
     }
 }

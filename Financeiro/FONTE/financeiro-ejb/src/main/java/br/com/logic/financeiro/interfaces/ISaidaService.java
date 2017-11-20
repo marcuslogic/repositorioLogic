@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @Local
 public interface ISaidaService {
 
-    public ArrayList<SaidaModel> getSaidas() throws Exception;
+    public ArrayList<SaidaModel> obterTodasSaidas() throws Exception;
 
     public SaidaModel salvarSaida(SaidaModel saidaNova) throws Exception;
 
@@ -18,7 +18,7 @@ public interface ISaidaService {
 
     public ArrayList<SaidaModel> getSaidasByData(SaidaModel saidaData) throws Exception;
 
-    public ArrayList<SaidaModel> getSaidasByDescricao(SaidaModel saidaDescricao) throws Exception;
+    public ArrayList<SaidaModel> getSaidasByNome(SaidaModel saidaDescricao) throws Exception;
 
     public ArrayList<SaidaModel> getSaidasByTipo(SaidaModel saidaTipo) throws Exception;
 }

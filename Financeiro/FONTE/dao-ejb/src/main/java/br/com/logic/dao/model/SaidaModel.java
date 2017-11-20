@@ -1,17 +1,28 @@
 package br.com.logic.dao.model;
 
+import br.com.logic.dao.util.JsonDateDeserializer;
+import br.com.logic.dao.util.JsonDateSerializer;
+import br.com.logic.dao.util.LocalDateTimeConverter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import javax.persistence.Convert;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @XmlRootElement
-@XmlType(propOrder = {"id", "descricao", "data", "valor", "tipo"})
+@XmlType(propOrder = {"id", "nome", "data", "valor", "tipo"})
 public class SaidaModel implements Serializable {
     private int id;
-    private String descricao;
-    private LocalDate data;
+    private String nome;
+
+    @Convert(converter = LocalDateTimeConverter.class)
+    @JsonDeserialize(using = JsonDateDeserializer.class)
+    @JsonSerialize(using = JsonDateSerializer.class)
+    private LocalDateTime data;
     private double valor;
     private String tipo;
 
@@ -25,20 +36,20 @@ public class SaidaModel implements Serializable {
     }
 
     @XmlElement
-    public String getDescricao() {
-        return descricao;
+    public String getNome() {
+        return nome;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @XmlElement
-    public LocalDate getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 

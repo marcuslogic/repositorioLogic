@@ -21,25 +21,65 @@ public class SaidaResource implements ISaidaResource {
     ISaidaService saidaService;
 
     @POST
-    @Path("getSaidas")
+    @Path("obterTodasSaidas")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<SaidaModel> getSaidas() throws Exception {
-        return saidaService.getTodasSaidas();
+    @Override
+    public ArrayList<SaidaModel> obterTodasSaidas() throws Exception {
+        return saidaService.obterTodasSaidas();
     }
 
     @POST
     @Path("salvarSaida")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public SaidaModel insertSaida(SaidaModel saida) throws Exception {
+    @Override
+    public SaidaModel salvarSaida(SaidaModel saida) throws Exception {
+
         return saidaService.salvarSaida(saida);
     }
 
     @POST
-    @Path("salvarSaida")
+    @Path("alterarSaida")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public SaidaModel updateSaida(SaidaModel saida) throws Exception {
-        return saidaService.updateSaida(saida);
+    @Override
+    public SaidaModel alterarSaida(SaidaModel saida) throws Exception {
+        return saidaService.alterarSaida(saida);
+    }
+
+    @POST
+    @Path("deletarSaida")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Override
+    public Boolean deletarSaida(SaidaModel saida) throws Exception {
+        return saidaService.deletarSaida(saida);
+    }
+
+    @POST
+    @Path("obterSaidaPorData")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Override
+    public ArrayList<SaidaModel> obterSaidaPorData(SaidaModel saida) throws Exception {
+        return saidaService.getSaidasByData(saida);
+    }
+
+    @POST
+    @Path("obterSaidaPorNome")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Override
+    public ArrayList<SaidaModel> obterSaidaPorNome(SaidaModel saida) throws Exception {
+        return saidaService.getSaidasByNome(saida);
+    }
+
+    @POST
+    @Path("obterSaidaPorTipo")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Override
+    public ArrayList<SaidaModel> obterSaidaPorTipo(SaidaModel saida) throws Exception {
+        return saidaService.getSaidasByTipo(saida);
     }
 }

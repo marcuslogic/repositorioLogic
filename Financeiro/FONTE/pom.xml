@@ -11,5 +11,6 @@
   	<module>treinamentoservice-web</module>
   	<module>treinamento-ear</module>
     <module>dao-ejb</module>
+      <module>treinamento-teste</module>
   </modules>
 </project>
