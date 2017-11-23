@@ -6,7 +6,7 @@
         <configuration>
             <property name="chameleonTarget">jboss eap:7.0.1:managed</property>
             <property name="jbossHome">/home/marcus/Logic/servidores/testejbosseap</property>
-            <property name="serverConfig">standalone-full.xml</property>
+            <property name="serverConfig">standalone.xml</property>
         </configuration>
     </container>
 </arquillian>

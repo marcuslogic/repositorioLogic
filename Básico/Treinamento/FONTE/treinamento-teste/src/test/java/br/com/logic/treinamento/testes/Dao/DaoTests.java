@@ -30,7 +30,7 @@ public class DaoTests extends ArquillianUtil {
 
         saida = saidaDao.salvarSaida(saida);
 
-        SaidaModel saidaPesquisa = null;
+        SaidaModel saidaPesquisa = new SaidaModel();
         saidaPesquisa.setNome("teste integracao");
 
         for(SaidaModel retornoPesquisa : saidaDao.getSaidasByNome(saidaPesquisa)){
@@ -39,7 +39,7 @@ public class DaoTests extends ArquillianUtil {
             }
         }
 
-        Assert.assertEquals(saidaPesquisa, saida);
+        Assert.assertEquals(saidaPesquisa.getNome(), saida.getNome());
     }
 
 }

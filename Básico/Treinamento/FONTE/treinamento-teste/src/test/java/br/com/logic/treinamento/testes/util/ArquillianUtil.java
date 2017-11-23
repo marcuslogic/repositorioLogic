@@ -22,11 +22,20 @@ public class ArquillianUtil {
     @Deployment
     public static EnterpriseArchive createTestArchive() throws Exception {
         EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, "treinamento-test.ear");
-        ear.addAsModule(new File("/home/marcus/Logic/repositorioLogic/Básico/Treinamento/FONTE/dao-ejb/target/dao-ejb.jar"), "dao-ejb.jar").addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-        ear.addAsModule(new File("/home/marcus/Logic/repositorioLogic/Básico/Treinamento/hsqldb/lib/hsqldb.jar"), "hsqldb.jar");
+        ear.addAsModule(new File("/home/marcus/Logic/repositorioLogic/Básico/Treinamento/FONTE/dao-ejb/target/dao-ejb.jar"),
+                "dao-ejb.jar")
+                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 
-        JavaArchive jarTest = ShrinkWrap.create(JavaArchive.class, "treinamento-test-0.0.1-SNAPSHOT.jar").addPackages(true, "br.com.logic.treinamento.testes").addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml").addAsResource("persistence.xml");
-        jarTest.merge(ShrinkWrap.create(GenericArchive.class).as(ExplodedImporter.class).importDirectory("src/test/resources").as(GenericArchive.class), "/", Filters.includeAll());
+        ear.addAsLibrary(new File("/home/marcus/Logic/repositorioLogic/Básico/Treinamento/hsqldb/lib/hsqldb.jar"),
+                "hsqldb.jar");
+
+        JavaArchive jarTest = ShrinkWrap.create(JavaArchive.class, "treinamento-test-0.0.1-SNAPSHOT.jar")
+                .addPackages(true, "br.com.logic.treinamento.testes")
+                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+        jarTest.merge(ShrinkWrap.create(GenericArchive.class)
+                .as(ExplodedImporter.class)
+                .importDirectory("src/test/resources")
+                .as(GenericArchive.class), "/", Filters.includeAll());
 
         ear.addAsLibrary(jarTest);
 
