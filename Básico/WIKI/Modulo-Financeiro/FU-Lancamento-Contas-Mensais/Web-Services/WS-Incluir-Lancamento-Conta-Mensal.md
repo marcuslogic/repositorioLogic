@@ -10,50 +10,38 @@
 
 Inclusão de lançamentos de conta mensal
 
-## Header
-
-**NOTA AO DESENVOLVEDOR:** Coloque aqui a lista de atributos do header, sua obrigatoriedade e valores válidos
-
-| Atributo                          | Obrigatório | Observações                          |
-|-----------------------------------|:-----------:|--------------------------------------|
-| Nome do Atributo (case sensitive) |     S/N     | Descrição do campo e valores válidos |
-
-
 ## Atributos do Serviço
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui a lista de atributos da chamada ao WS, sua obrigatoriedade e valores válidos
-
-| Atributo                          | Obrigatório | Observações                          |
-|-----------------------------------|:-----------:|--------------------------------------|
-| Nome do Atributo (case sensitive) |     S/N     | Descrição do campo e valores válidos |
+| Atributo                | Obrigatório | Observações                                      |
+|-------------------------|:-----------:|--------------------------------------------------|
+| descricaoLancamento     |     S       | Descrição do lançamento. String                  |
+| dataLancamento          |     S       | Data do lançamento. "YYYY-MM-dd"                 |
+| valorLancamento         |     S       | Valor do lançamento. 99999999.99                 |
+| idTipoLancamento        |     S       | Valor do lancamento. Valores: Numeração de 1 a 7 |
 
 ## Demais Validações
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui alguma regra de validação mais especifica (que não seja apenas validação de obrigatoridade de campos)
+## JSON Request
 
-
-
-## XML Request
-
-**NOTA AO DESENVOLVEDOR:** Coloque aqui o XML de request padrão
-
-~~~xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-   <soapenv:Header/>
-   <soapenv:Body>
-   </soapenv:Body>
-</soapenv:Envelope>
+~~~json
+{
+	"descricaoLancamento":"Teste",
+	"dataLancamento":"2017-11-26 00:00",
+	"valorLancamento":10.50,
+	"idTipoLancamento": 1
+}
 ~~~
 
 ## Response
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui o XML de response padrão
-
-~~~xml
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-   </soap:Body>
-</soap:Envelope>
+~~~json
+{
+   "idLancamento": 2,
+   "descricaoLancamento": "Teste",
+   "dataLancamento": "2017-11-26 00:00",
+   "valorLancamento": 10.5,
+   "idTipoLancamento": 1
+}
 ~~~
 
 _[Sobre o Portal de Documentação](../../../About/About.md)_

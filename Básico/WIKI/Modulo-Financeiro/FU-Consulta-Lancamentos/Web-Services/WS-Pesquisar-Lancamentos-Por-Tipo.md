@@ -10,48 +10,33 @@
 
 Pesquisa de lançamentos por tipo de lançamento
 
-## Header
-
-**NOTA AO DESENVOLVEDOR:** Coloque aqui a lista de atributos do header, sua obrigatoriedade e valores válidos
-
-| Atributo                          | Obrigatório | Observações                          |
-|-----------------------------------|:-----------:|--------------------------------------|
-| Nome do Atributo (case sensitive) |     S/N     | Descrição do campo e valores válidos |
-
-
 ## Atributos do Serviço
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui a lista de atributos da chamada ao WS, sua obrigatoriedade e valores válidos
 
-| Atributo                          | Obrigatório | Observações                          |
-|-----------------------------------|:-----------:|--------------------------------------|
-| Nome do Atributo (case sensitive) |     S/N     | Descrição do campo e valores válidos |
+| Atributo                          | Obrigatório | Observações                                      |
+|-----------------------------------|:-----------:|--------------------------------------------------|
+| idTipoLancamento                  |     S       | Valor do lancamento. Valores: Numeração de 1 a 7 |
 
 ## Demais Validações
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui alguma regra de validação mais especifica (que não seja apenas validação de obrigatoridade de campos)
-
-## XML Request
-
-**NOTA AO DESENVOLVEDOR:** Coloque aqui o XML de request padrão
+## JSON Request
 
 ~~~xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-   <soapenv:Header/>
-   <soapenv:Body>
-   </soapenv:Body>
-</soapenv:Envelope>
+{
+	"idTipoLancamento":1
+}
 ~~~
 
 ## Response
 
-**NOTA AO DESENVOLVEDOR:** Coloque aqui o XML de response padrão
-
-~~~xml
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-   <soap:Body>
-   </soap:Body>
-</soap:Envelope>
+~~~json
+[{
+   "idLancamento": 2,
+   "descricaoLancamento": "Teste",
+   "dataLancamento": "2017-11-26 19:08",
+   "valorLancamento": 10.5,
+   "idTipoLancamento": 1
+}]
 ~~~
 
 _[Sobre o Portal de Documentação](../../../About/About.md)_

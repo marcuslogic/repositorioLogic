@@ -235,7 +235,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setString(1, "'%" + saidaDescricao.getDescricaoLancamento() + "%'");
+            ps.setString(1, "%" + saidaDescricao.getDescricaoLancamento() + "%");
 
             rs = ps.executeQuery();
 

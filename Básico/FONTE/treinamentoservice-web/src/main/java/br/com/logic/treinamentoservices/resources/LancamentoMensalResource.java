@@ -51,7 +51,6 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
 
         try {
             LancamentoMensalModel lancamentoAlterado = lancamentoMensalService.alterarLancamentoMensal(lancamentoMensal);
-            ;
             retorno = Response.ok(lancamentoAlterado);
         } catch (Exception e) {
             retorno = Response.serverError().entity(e.getLocalizedMessage());
@@ -87,8 +86,18 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception {
-        return lancamentoMensalService.pesquisarLancamentosPorPeriodo(saida);
+    public Response pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception {
+
+        Response.ResponseBuilder retorno = null;
+
+        try {
+            retorno = Response.ok(lancamentoMensalService.pesquisarLancamentosPorPeriodo(saida));
+        } catch (Exception e) {
+            retorno = Response.serverError().entity(e.getLocalizedMessage());
+        }
+
+        return retorno.build();
+
     }
 
     @POST
@@ -96,8 +105,18 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorDescricao(LancamentoMensalModel saida) throws Exception {
-        return lancamentoMensalService.pesquisarLancamentosPorDescricao(saida);
+    public Response pesquisarLancamentoPorDescricao(LancamentoMensalModel saida) throws Exception {
+
+        Response.ResponseBuilder retorno = null;
+
+        try {
+            retorno = Response.ok(lancamentoMensalService.pesquisarLancamentosPorDescricao(saida));
+        } catch (Exception e) {
+            retorno = Response.serverError().entity(e.getLocalizedMessage());
+        }
+
+        return retorno.build();
+
     }
 
     @POST
@@ -105,7 +124,17 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorTipo(LancamentoMensalModel saida) throws Exception {
-        return lancamentoMensalService.pesqusiarLancamentosPorTipo(saida);
+    public Response pesquisarLancamentoPorTipo(LancamentoMensalModel saida) throws Exception {
+
+        Response.ResponseBuilder retorno = null;
+
+        try {
+            retorno = Response.ok(lancamentoMensalService.pesqusiarLancamentosPorTipo(saida));
+        } catch (Exception e) {
+            retorno = Response.serverError().entity(e.getLocalizedMessage());
+        }
+
+        return retorno.build();
+
     }
 }

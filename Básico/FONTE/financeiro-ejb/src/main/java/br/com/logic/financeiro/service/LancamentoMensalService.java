@@ -95,33 +95,33 @@ public class LancamentoMensalService implements ILancamentoMensalService {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorPeriodo(LancamentoMensalModel saida) throws Exception {
+    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorPeriodo(LancamentoMensalModel lancamentoMensal) throws Exception {
 
-        if (saida.getDataLancamento() == null) {
+        if (lancamentoMensal.getDataLancamento() == null) {
             throw new Exception("Informe uma data válida.");
         }
 
-        return lancamentoMensalBean.pesquisarLancamentosPorPeriodo(saida);
+        return lancamentoMensalBean.pesquisarLancamentosPorPeriodo(lancamentoMensal);
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorDescricao(LancamentoMensalModel saida) throws Exception {
+    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorDescricao(LancamentoMensalModel lancamentoMensal) throws Exception {
 
-        if (saida.getDescricaoLancamento() == null) {
+        if (lancamentoMensal.getDescricaoLancamento() == null) {
             throw new Exception("Informe um nome válido.");
         }
 
-        return lancamentoMensalBean.pesquisarLancamentosPorDescricao(saida);
+        return lancamentoMensalBean.pesquisarLancamentosPorDescricao(lancamentoMensal);
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesqusiarLancamentosPorTipo(LancamentoMensalModel saida) throws Exception {
+    public ArrayList<LancamentoMensalModel> pesqusiarLancamentosPorTipo(LancamentoMensalModel lancamentoMensal) throws Exception {
 
-        if (saida.getIdTipoLancamento() == 0) {
+        if (lancamentoMensal.getIdTipoLancamento() == 0) {
             throw new Exception("Informe um tipo válido.");
         }
 
-        return lancamentoMensalBean.pesquisarLancamentosPorTipo(saida);
+        return lancamentoMensalBean.pesquisarLancamentosPorTipo(lancamentoMensal);
 
     }
 }

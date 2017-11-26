@@ -15,9 +15,9 @@ public interface ILancamentoMensalResource {
 
     public Response excluirLancamentoMensal(LancamentoMensalModel saida) throws Exception;
 
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception;
+    public Response pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception;
 
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorDescricao(LancamentoMensalModel saida) throws Exception;
+    public Response pesquisarLancamentoPorDescricao(LancamentoMensalModel saida) throws Exception;
 
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentoPorTipo(LancamentoMensalModel saida) throws Exception;
+    public Response pesquisarLancamentoPorTipo(LancamentoMensalModel saida) throws Exception;
 }
