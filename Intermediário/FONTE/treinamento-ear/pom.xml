@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>br.com.logic.treinamento</groupId>
+        <artifactId>treinamento</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>treinamento-ear</artifactId>
+    <packaging>ear</packaging>
+    <name>treinamento-ear</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>treinamentoservice-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>financeiro-ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>dao-ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10.1</version>
+                <configuration>
+                    <modules>
+                        <webModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>treinamentoservice-web</artifactId>
+                            <contextRoot>/Treinamento</contextRoot>
+                            <bundleFileName>treinamentoservice-web.war</bundleFileName>
+                        </webModule>
+                        <ejbModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>financeiro-ejb</artifactId>
+                            <bundleFileName>financeiro-ejb.jar</bundleFileName>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>dao-ejb</artifactId>
+                            <bundleFileName>dao-ejb.jar</bundleFileName>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>treinamento-ear</finalName>
+    </build>
+</project>
