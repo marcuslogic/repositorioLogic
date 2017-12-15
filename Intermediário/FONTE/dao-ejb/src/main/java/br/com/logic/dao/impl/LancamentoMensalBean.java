@@ -1,15 +1,15 @@
 package br.com.logic.dao.impl;
 
-import br.com.logic.dao.interfaces.IConnectBean;
 import br.com.logic.dao.interfaces.ILancamentoMensalBean;
 import br.com.logic.dao.model.LancamentoMensalModel;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -17,167 +17,52 @@ import java.util.ArrayList;
 @Stateless
 public class LancamentoMensalBean implements ILancamentoMensalBean {
 
-    @Inject
-    private IConnectBean connectBean;
-
     @Override
     public LancamentoMensalModel incluirLancamentoMensal(LancamentoMensalModel insertLancamentoMensal) throws Exception {
 
-        //<editor-fold desc="Variáveis">
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String sql;
-        // </editor-fold>
-
         try {
 
-            sql = "Insert into LancamentoMensal" +
-                    "\n (descricaoLancamento, " +
-                    "\n dataLancamento, " +
-                    "\n valorLancamento, " +
-                    "\n idTipoLancamento) " +
-                    "\n Values " +
-                    "\n (?, " +
-                    "\n ?, " +
-                    "\n ?, " +
-                    "\n ?)";
+            EntityManager em = new JPAUtil().getEntityManager();
 
-            //<editor-fold desc="Lógica">
-            conn = connectBean.getConnection();
-            ps = conn.prepareStatement(sql, ps.RETURN_GENERATED_KEYS);
-
-            ps.setString(1, insertLancamentoMensal.getDescricaoLancamento());
-            ps.setTimestamp(2, Timestamp.valueOf(insertLancamentoMensal.getDataLancamento()));
-            ps.setDouble(3, insertLancamentoMensal.getValorLancamento());
-            ps.setInt(4, insertLancamentoMensal.getIdTipoLancamento());
-
-            ps.execute();
-
-            rs = ps.getGeneratedKeys();
-
-            while (rs.next()) {
-                insertLancamentoMensal.setIdLancamento(rs.getInt("idLancamento"));
-            }
-            //</editor-fold>
+            em.persist(insertLancamentoMensal);
+            em.flush();
 
             return insertLancamentoMensal;
 
         } catch (Exception e) {
             throw new Exception(e);
-        } finally {
-            if (conn != null) {
-                conn.close();
-            }
-            if (rs != null) {
-                rs.close();
-            }
-            if (ps != null) {
-                ps.close();
-            }
         }
     }
 
     @Override
     public LancamentoMensalModel alterarLancamentoMensal(LancamentoMensalModel updateLancamentoMensal) throws Exception {
 
-        //<editor-fold desc="Variáveis">
-//        Connection conn = null;
-//        PreparedStatement ps = null;
-//        ResultSet rs = null;
-//        String sql;
-        EntityManager emf = Persistence.createEntityManagerFactory("Treinamento").createEntityManager();
-        // </editor-fold>
-
         try {
+            EntityManager emf = Persistence.createEntityManagerFactory("Treinamento").createEntityManager();
 
-//            sql = "Update LancamentoMensal Set" +
-//                    "\n descricaoLancamento = ?, " +
-//                    "\n dataLancamento = ?, " +
-//                    "\n valorLancamento = ?, " +
-//                    "\n idTipoLancamento = ? " +
-//                    "\n Where idLancamento = ?";
-//
-//            //<editor-fold desc="Lógica">
-//            conn = connectBean.getConnection();
-//            ps = conn.prepareStatement(sql);
-//
-//            ps.setString(1, updateLancamentoMensal.getDescricaoLancamento());
-//            ps.setTimestamp(2, Timestamp.valueOf(updateLancamentoMensal.getDataLancamento()));
-//            ps.setDouble(3, updateLancamentoMensal.getValorLancamento());
-//            ps.setInt(4, updateLancamentoMensal.getIdTipoLancamento());
-//            ps.setInt(5, updateLancamentoMensal.getIdLancamento());
-//
-//            ps.execute();
-
-            emf.persist(updateLancamentoMensal);
+            emf.merge(updateLancamentoMensal);
             emf.flush();
-
-            //</editor-fold>
 
             return updateLancamentoMensal;
 
         } catch (Exception e) {
             throw new Exception(e);
         }
-//        finally {
-//            if (conn != null) {
-//                conn.close();
-//            }
-//            if (rs != null) {
-//                rs.close();
-//            }
-//            if (ps != null) {
-//                ps.close();
-//            }
-//        }
     }
 
     @Override
     public Boolean excluirLancamentoMensal(LancamentoMensalModel deleteLancamentoMensal) throws Exception {
 
-        //<editor-fold desc="Variáveis">
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String sql = null;
-        Boolean retorno = Boolean.FALSE;
-        int retornoSql = 0;
-        // </editor-fold>
-
         try {
+            EntityManager emf = Persistence.createEntityManagerFactory("Treinamento").createEntityManager();
 
-            sql = "Delete From LancamentoMensal" +
-                    "\n Where idLancamento = ?";
+            emf.remove(deleteLancamentoMensal);
+            emf.flush();
 
-            //<editor-fold desc="Lógica">
-            conn = connectBean.getConnection();
-            ps = conn.prepareStatement(sql);
-
-            ps.setInt(1, deleteLancamentoMensal.getIdLancamento());
-
-            retornoSql = ps.executeUpdate();
-
-            if(retornoSql != 0) {
-                retorno = Boolean.TRUE;
-            }
-
-            //</editor-fold>
-
-            return retorno;
+            return deleteLancamentoMensal;
 
         } catch (Exception e) {
             throw new Exception(e);
-        } finally {
-            if (conn != null) {
-                conn.close();
-            }
-            if (rs != null) {
-                rs.close();
-            }
-            if (ps != null) {
-                ps.close();
-            }
         }
     }
 
