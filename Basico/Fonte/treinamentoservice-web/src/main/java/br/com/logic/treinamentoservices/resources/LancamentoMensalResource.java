@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-@Path("/")
+@Path("/lancamentos")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class LancamentoMensalResource implements ILancamentoMensalResource {
@@ -73,51 +73,56 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
 //        return retorno.build();
 //    }
 //
-//    @POST
-//    @Path("pesquisarLancamentoPorPeriodo")
-//    @Override
-//    public Response pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception {
-//
-//        Response.ResponseBuilder retorno = null;
-//
-//        try {
-//            retorno = Response.ok(lancamentoMensalService.pesquisarLancamentosPorPeriodo(saida));
-//        } catch (Exception e) {
-//            retorno = Response.serverError().entity(e.getLocalizedMessage());
-//        }
-//
-//        return retorno.build();
-//
-//    }
-//
     @GET
+    @Path("/findByPeriodo")
     @Override
-    public List<LancamentoMensalModel> pesquisarLancamentos(@QueryParam("campo") String campo, @QueryParam("valor") String valor) throws Exception {
+    public List<LancamentoMensalModel> findByPeriodo(@QueryParam("periodo") String periodo) throws Exception {
 
         try {
-            if(descricao == null) {
-                saida.setIdTipoLancamento(tipo);
-                return lancamentoMensalService.pesqusiarLancamentosPorTipo(saida);
-            } else {
-                saida.setDescricaoLancamento(descricao);
-                return lancamentoMensalService.pesquisarLancamentosPorDescricao(saida);
+
+            if(periodo == null) {
+                throw new Exception("Periodo obrigatório.");
             }
+
+            return lancamentoMensalService.findByPeriodo(periodo);
         } catch (Exception e) {
             throw new Exception(e);
         }
     }
 
-//    @GET
-//    @Override
-//    public List<LancamentoMensalModel> pesquisarLancamentoPorTipo(Integer tipo) throws Exception {
-//
-//        LancamentoMensalModel saida = new LancamentoMensalModel();
-//        saida.setIdTipoLancamento(tipo);
-//
-//        try {
-//            return lancamentoMensalService.pesqusiarLancamentosPorTipo(saida);
-//        } catch (Exception e) {
-//            throw new Exception(e);
-//        }
-//    }
+    @GET
+    @Path("/findByDescricao")
+    @Override
+    public List<LancamentoMensalModel> findByDescricao(@QueryParam("descricao") String descricao) throws Exception {
+
+        try {
+
+            if(descricao == null) {
+                throw new Exception("Descricao obrigatória.");
+            }
+
+            return lancamentoMensalService.findByDescricao(descricao);
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+    }
+
+    @GET
+    @Path("/findByTipo")
+    @Override
+    public List<LancamentoMensalModel> findByTipo(@QueryParam("tipo") Integer tipo) throws Exception {
+
+        try {
+
+            if(tipo == null) {
+                throw new Exception("Tipo obrigatório.");
+            }
+
+            return lancamentoMensalService.findByTipo(tipo);
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
+    }
 }

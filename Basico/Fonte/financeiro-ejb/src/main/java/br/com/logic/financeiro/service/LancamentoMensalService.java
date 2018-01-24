@@ -7,6 +7,7 @@ import br.com.logic.financeiro.interfaces.ILancamentoMensalService;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.List;
 
 @Stateless
 public class LancamentoMensalService implements ILancamentoMensalService {
@@ -105,10 +106,10 @@ public class LancamentoMensalService implements ILancamentoMensalService {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorDescricao(LancamentoMensalModel lancamentoMensal) throws Exception {
+    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception {
 
-        if (lancamentoMensal.getDescricaoLancamento() == null) {
-            throw new Exception("Informe um nome válido.");
+        if (descricao == null) {
+            throw new Exception("Informe uma descrição válida.");
         }
 
         return lancamentoMensalBean.pesquisarLancamentosPorDescricao(lancamentoMensal);

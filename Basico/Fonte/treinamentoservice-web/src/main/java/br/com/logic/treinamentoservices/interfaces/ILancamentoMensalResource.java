@@ -16,9 +16,9 @@ public interface ILancamentoMensalResource {
 //
 //    public Response excluirLancamentoMensal(LancamentoMensalModel saida) throws Exception;
 //
-//    public Response pesquisarLancamentoPorPeriodo(LancamentoMensalModel saida) throws Exception;
+    public List<LancamentoMensalModel> findByPeriodo(String saida) throws Exception;
 
-    public List<LancamentoMensalModel> pesquisarLancamentoPorDescricao(String descricao, Integer tipo) throws Exception;
+    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception;
 
-//    public List<LancamentoMensalModel> pesquisarLancamentoPorTipo(Integer tipo) throws Exception;
+    public List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception;
 }
