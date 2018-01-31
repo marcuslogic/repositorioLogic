@@ -4,7 +4,7 @@
 [Home](../../../ReadMe.md) :: [Módulo Financeiro](../../Modulo-Financeiro.md) :: [FU-Consulta Lançamentos](../FU-Consulta-Lancamentos.md) :: [WS-Pesquisar Lancamentos por Período](WS-Pesquisar-Lancamentos-Por-Periodo.md)
 
 
-# WebService: Pesquisar Lancamentos por Período
+# WebService: findByPeríodo
 
 ## Descrição
 
@@ -20,7 +20,7 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 
 ~~~json
 {
-	"dataLancamento":"2017-11-26 00:00"
+	"dataLancamento":"2017-11-26"
 }
 ~~~
 
@@ -30,7 +30,7 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 [{
    "idLancamento": 2,
    "descricaoLancamento": "Teste",
-   "dataLancamento": "2017-11-26 18:57",
+   "dataLancamento": "2017-11-26",
    "valorLancamento": 10.5,
    "idTipoLancamento": 1
 }]
