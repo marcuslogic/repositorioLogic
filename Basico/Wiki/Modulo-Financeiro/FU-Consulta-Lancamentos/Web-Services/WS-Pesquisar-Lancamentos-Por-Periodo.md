@@ -18,11 +18,9 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 
 ## JSON Request
 
-~~~json
-{
-	"dataLancamento":"2017-11-26"
-}
-~~~
+´´´
+http://localhost:8080/Treinamento/v1/lancamentos/findByPeriodo?periodo=2018-01-01
+´´´
 
 ## Response
 
