@@ -7,9 +7,11 @@ import br.com.logic.dao.model.LancamentoMensalModel;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Stateless
 public class LancamentoMensalBean implements ILancamentoMensalBean {
@@ -165,14 +167,14 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorPeriodo(LancamentoMensalModel dataLancamentoMensal) throws Exception {
+    public List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
         PreparedStatement ps = null;
         ResultSet rs = null;
         String sql;
-        ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<LancamentoMensalModel>();
+        ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<>();
         // </editor-fold>
 
         try {
@@ -185,7 +187,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setTimestamp(1, Timestamp.valueOf(dataLancamentoMensal.getDataLancamento()));
+            ps.setTimestamp(1, Timestamp.valueOf(periodo));
 
             rs = ps.executeQuery();
 

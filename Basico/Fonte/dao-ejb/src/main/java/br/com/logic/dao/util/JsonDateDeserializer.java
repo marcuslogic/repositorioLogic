@@ -20,7 +20,7 @@ public class JsonDateDeserializer extends JsonDeserializer<LocalDateTime> {
         final TextNode node = (TextNode) oc.readTree(jp);
         final String dateString = node.textValue();
 
-        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return LocalDateTime.parse(dateString, formatter);
     }
 }

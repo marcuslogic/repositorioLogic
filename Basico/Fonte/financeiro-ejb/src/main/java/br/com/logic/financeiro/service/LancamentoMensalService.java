@@ -96,13 +96,9 @@ public class LancamentoMensalService implements ILancamentoMensalService {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorPeriodo(LancamentoMensalModel lancamentoMensal) throws Exception {
+    public List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception {
 
-        if (lancamentoMensal.getDataLancamento() == null) {
-            throw new Exception("Informe uma data válida.");
-        }
-
-        return lancamentoMensalBean.pesquisarLancamentosPorPeriodo(lancamentoMensal);
+        return lancamentoMensalBean.findByPeriodo(periodo);
     }
 
     @Override
@@ -112,17 +108,17 @@ public class LancamentoMensalService implements ILancamentoMensalService {
             throw new Exception("Informe uma descrição válida.");
         }
 
-        return lancamentoMensalBean.pesquisarLancamentosPorDescricao(lancamentoMensal);
+        return new ArrayList<LancamentoMensalModel>(); //lancamentoMensalBean.pesquisarLancamentosPorDescricao(lancamentoMensal);
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesqusiarLancamentosPorTipo(LancamentoMensalModel lancamentoMensal) throws Exception {
+    public List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception {
 
-        if (lancamentoMensal.getIdTipoLancamento() == 0) {
-            throw new Exception("Informe um tipo válido.");
-        }
+//        if (lancamentoMensal.getIdTipoLancamento() == 0) {
+//            throw new Exception("Informe um tipo válido.");
+//        }
 
-        return lancamentoMensalBean.pesquisarLancamentosPorTipo(lancamentoMensal);
+        return new ArrayList<LancamentoMensalModel>(); //lancamentoMensalBean.pesquisarLancamentosPorTipo(lancamentoMensal);
 
     }
 }

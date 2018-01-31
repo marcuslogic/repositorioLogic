@@ -4,6 +4,7 @@ import br.com.logic.dao.model.LancamentoMensalModel;
 
 import javax.ejb.Local;
 import java.util.ArrayList;
+import java.util.List;
 
 @Local
 public interface ILancamentoMensalBean {
@@ -14,7 +15,7 @@ public interface ILancamentoMensalBean {
 
     public Boolean excluirLancamentoMensal(LancamentoMensalModel saidaRemocao) throws Exception;
 
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorPeriodo(LancamentoMensalModel saidaData) throws Exception;
+    List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception;
 
     public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorDescricao(LancamentoMensalModel saidaDescricao) throws Exception;
 

@@ -9,15 +9,15 @@ import java.util.List;
 @Local
 public interface ILancamentoMensalService {
 
-    public LancamentoMensalModel incluirLancamentoMensal(LancamentoMensalModel saidaNova) throws Exception;
+    LancamentoMensalModel incluirLancamentoMensal(LancamentoMensalModel saidaNova) throws Exception;
 
-    public LancamentoMensalModel alterarLancamentoMensal(LancamentoMensalModel saidaAlterada) throws Exception;
+    LancamentoMensalModel alterarLancamentoMensal(LancamentoMensalModel saidaAlterada) throws Exception;
 
-    public Boolean deletarLancamentoMensal(LancamentoMensalModel saidaRemocao) throws Exception;
+    Boolean deletarLancamentoMensal(LancamentoMensalModel saidaRemocao) throws Exception;
 
-    public ArrayList<LancamentoMensalModel> findByPeriodo(LancamentoMensalModel saidaData) throws Exception;
+    List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception;
 
-    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception;
+    List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception;
 
-    public List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception;
+    List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception;
 }

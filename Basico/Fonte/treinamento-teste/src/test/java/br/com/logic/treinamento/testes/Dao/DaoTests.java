@@ -157,7 +157,7 @@ public class DaoTests extends ArquillianUtil {
 
         ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<>();
 
-        lancamentos = lancamentoMensalBean.pesquisarLancamentosPorPeriodo(lancamentoMensal);
+        lancamentos = (ArrayList<LancamentoMensalModel>) lancamentoMensalBean.findByPeriodo("");
 
         Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
 

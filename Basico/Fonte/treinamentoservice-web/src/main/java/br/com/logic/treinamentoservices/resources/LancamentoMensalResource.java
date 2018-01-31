@@ -8,7 +8,8 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import java.util.List;
 
 @Stateless
@@ -76,17 +77,17 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     @GET
     @Path("/findByPeriodo")
     @Override
-    public List<LancamentoMensalModel> findByPeriodo(@QueryParam("periodo") String periodo) throws Exception {
+    public Response findByPeriodo(@QueryParam("periodo") String periodo) {
 
         try {
 
-            if(periodo == null) {
-                throw new Exception("Periodo obrigatório.");
+            if (periodo == null) {
+                return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar um periodo no padrão: 'DD-MM-AAAA'").build();
             }
 
-            return lancamentoMensalService.findByPeriodo(periodo);
+            return Response.ok().entity(lancamentoMensalService.findByPeriodo(periodo)).build();
         } catch (Exception e) {
-            throw new Exception(e);
+            return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }
     }
 
@@ -97,7 +98,7 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
 
         try {
 
-            if(descricao == null) {
+            if (descricao == null) {
                 throw new Exception("Descricao obrigatória.");
             }
 
@@ -115,7 +116,7 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
 
         try {
 
-            if(tipo == null) {
+            if (tipo == null) {
                 throw new Exception("Tipo obrigatório.");
             }
 
