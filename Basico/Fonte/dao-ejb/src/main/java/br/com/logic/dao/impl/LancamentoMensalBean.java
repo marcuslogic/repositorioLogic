@@ -166,7 +166,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception {
+    public List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -179,14 +179,43 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
         try {
 
             sql = "Select *" +
-                    "\n From LancamentoMensal" +
-                    "\n Where dataLancamento = ?";
+                    "\n From LancamentoMensal";
+
+            if(pesquisa.nome != null) {
+              sql += "\n Where descricaoLancamento like ?";
+            }
+
+            if(pesquisa.tipo != null) {
+               if(sql.contains("Where")) {
+                 sql += "\n And idTipoLancamento = ?";
+               } else {
+                 sql += "\n Where idTipoLancamento = ?";
+               }
+            }
+
+            if(pesquisa.periodo != null){
+              if(sql.contains("Where")) {
+                sql += "\n And dataLancamento = ?";
+              } else {
+                sql += "\n Where dataLancamento = ?";
+              }
+            }
 
             //<editor-fold desc="Lógica">
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setDate(1, Date.valueOf(periodo));
+            if(pesquisa.nome != null) {
+              ps.setString(1, "%" + descricao + "%");
+            }
+
+            if(pesquisa.tipo != null) {
+              ps.setInt(1, tipo);
+            }
+
+            if(pesquisa.periodo != null) {
+              ps.setDate(1, Date.valueOf(periodo));
+            }
 
             rs = ps.executeQuery();
 
@@ -214,105 +243,4 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             }
         }
     }
-
-    @Override
-    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception {
-
-        //<editor-fold desc="Variáveis">
-        Connection conn;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String sql;
-        ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<LancamentoMensalModel>();
-        // </editor-fold>
-
-        try {
-
-            sql = "Select *" +
-                    "\n From LancamentoMensal" +
-                    "\n Where descricaoLancamento like ?";
-
-            //<editor-fold desc="Lógica">
-            conn = connectBean.getConnection();
-            ps = conn.prepareStatement(sql);
-
-            ps.setString(1, "%" + descricao + "%");
-
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                LancamentoMensalModel lancamento = new LancamentoMensalModel();
-                lancamento.setIdLancamento(rs.getInt("idLancamento"));
-                lancamento.setIdTipoLancamento(rs.getInt("idTipoLancamento"));
-                lancamento.setDescricaoLancamento(rs.getString("descricaoLancamento"));
-                lancamento.setValorLancamento(rs.getDouble("valorLancamento"));
-                lancamento.setDataLancamento(LocalDateTime.of((rs.getDate("dataLancamento").toLocalDate()), LocalTime.now()));
-                lancamentos.add(lancamento);
-            }
-            //</editor-fold>
-
-            return lancamentos;
-
-        } catch (Exception e) {
-            throw new Exception(e);
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (ps != null) {
-                ps.close();
-            }
-        }
-    }
-
-    @Override
-    public ArrayList<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception {
-
-        //<editor-fold desc="Variáveis">
-        Connection conn;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String sql;
-        ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<LancamentoMensalModel>();
-        // </editor-fold>
-
-        try {
-
-            sql = "Select *" +
-                    "\n From LancamentoMensal" +
-                    "\n Where idTipoLancamento = ?";
-
-            //<editor-fold desc="Lógica">
-            conn = connectBean.getConnection();
-            ps = conn.prepareStatement(sql);
-
-            ps.setInt(1, tipo);
-
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                LancamentoMensalModel lancamento = new LancamentoMensalModel();
-                lancamento.setIdLancamento(rs.getInt("idLancamento"));
-                lancamento.setIdTipoLancamento(rs.getInt("idTipoLancamento"));
-                lancamento.setDescricaoLancamento(rs.getString("descricaoLancamento"));
-                lancamento.setValorLancamento(rs.getDouble("valorLancamento"));
-                lancamento.setDataLancamento(LocalDateTime.of((rs.getDate("dataLancamento").toLocalDate()), LocalTime.now()));
-                lancamentos.add(lancamento);
-            }
-            //</editor-fold>
-
-            return lancamentos;
-
-        } catch (Exception e) {
-            throw new Exception(e);
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (ps != null) {
-                ps.close();
-            }
-        }
-    }
-
 }

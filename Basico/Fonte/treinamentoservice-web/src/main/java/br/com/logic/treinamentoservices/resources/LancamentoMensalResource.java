@@ -20,7 +20,7 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     @Inject
     ILancamentoMensalService lancamentoMensalService;
 
-    @POST
+    @PUT
     @Override
     public Response addLancamentoMensal(LancamentoMensalModel lancamentoMensal) {
 
@@ -119,54 +119,16 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
     }
 
     @GET
-    @Path("/findByPeriodo")
     @Override
-    public Response findByPeriodo(@QueryParam("periodo") String periodo) {
+    public Response find(PesquisaRequest pesquisa) String periodo) {
 
         try {
 
-            if (periodo == null) {
-                return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar um periodo no padrão: 'DD-MM-AAAA'").build();
+            if (pesquisa.nome == null && pesquisa.periodo == null && pesquisa.tipo <= 0) {
+                return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar um dado para pesquisa.").build();
             }
 
-            return Response.ok().entity(lancamentoMensalService.findByPeriodo(periodo)).build();
-        } catch (Exception e) {
-            return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-        }
-    }
-
-    @POST
-    @Path("/findByDescricao")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Override
-    public Response findByDescricao(String descricao) {
-
-        try {
-
-            if (descricao == null) {
-                return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar uma descrição").build();
-            }
-
-            return Response.ok().entity(lancamentoMensalService.findByDescricao(descricao)).build();
-
-        } catch (Exception e) {
-            return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-        }
-    }
-
-    @GET
-    @Path("/findByTipo")
-    @Override
-    public Response findByTipo(@QueryParam("tipo") Integer tipo) {
-
-        try {
-
-            if (tipo <= 0) {
-                return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar um tipo").build();
-            }
-
-            return Response.ok().entity(lancamentoMensalService.findByTipo(tipo)).build();
+            return Response.ok().entity(lancamentoMensalService.find(pesquisa)).build();
         } catch (Exception e) {
             return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
         }

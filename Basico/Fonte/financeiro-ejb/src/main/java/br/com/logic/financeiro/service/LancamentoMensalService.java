@@ -34,22 +34,9 @@ public class LancamentoMensalService implements ILancamentoMensalService {
     }
 
     @Override
-    public List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception {
+    public List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception {
 
-        return lancamentoMensalBean.findByPeriodo(periodo);
-    }
-
-    @Override
-    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception {
-
-        return lancamentoMensalBean.findByDescricao(descricao);
-    }
-
-    @Override
-    public List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception {
-
-        return lancamentoMensalBean.findByTipo(tipo);
-
+        return lancamentoMensalBean.find(pesquisa);
     }
 
 }

@@ -142,14 +142,14 @@ public class DaoTests extends ArquillianUtil {
         lancamentoMensal.setValorLancamento(50.50);
         lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
+        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26));
         lancamentoMensal.setDescricaoLancamento("Pesquisa Data 2");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
         lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
         lancamentosCriados.add(lancamentoMensal);
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
+        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26));
         lancamentoMensal.setDescricaoLancamento("Pesquisa Data 3");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
@@ -158,7 +158,7 @@ public class DaoTests extends ArquillianUtil {
 
         ArrayList<LancamentoMensalModel> lancamentos;
 
-        lancamentos = (ArrayList<LancamentoMensalModel>) lancamentoMensalBean.findByPeriodo("");
+        lancamentos = (ArrayList<LancamentoMensalModel>) lancamentoMensalBean.find(null);
 
         Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
 
@@ -191,7 +191,7 @@ public class DaoTests extends ArquillianUtil {
 
         List<LancamentoMensalModel> lancamentos;
 
-        lancamentos = lancamentoMensalBean.findByDescricao(lancamentoMensal.getDescricaoLancamento());
+        lancamentos = lancamentoMensalBean.find(null);
 
         Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
 
@@ -224,7 +224,7 @@ public class DaoTests extends ArquillianUtil {
 
         List<LancamentoMensalModel> lancamentos;
 
-        lancamentos = lancamentoMensalBean.findByTipo(lancamentoMensal.getIdTipoLancamento());
+        lancamentos = lancamentoMensalBean.find(null);
 
         Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
 

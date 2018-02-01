@@ -15,9 +15,4 @@ public interface ILancamentoMensalService {
 
     Boolean deleteLancamentoMensal(Integer idLancamento) throws Exception;
 
-    List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception;
-
-    List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception;
-
-    List<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception;
-}
+    List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception;

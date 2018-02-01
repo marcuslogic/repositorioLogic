@@ -14,9 +14,5 @@ public interface ILancamentoMensalResource {
 
     Response deleteLancamentoMensal(Integer idLancamento);
 
-    Response findByPeriodo(String periodo);
-
-    Response findByDescricao(String descricao);
-
-    Response findByTipo(Integer tipo);
+    Response find(PesquisaRequest pesquisa);
 }
