@@ -177,14 +177,14 @@ public class ArquillianUtil {
     @Deployment
     public static EnterpriseArchive createTestArchive() throws Exception {
         EnterpriseArchive ear = ShrinkWrap.create(EnterpriseArchive.class, "treinamento-test.ear");
-        ear.addAsModule(new File("/home/marcus/Logic/repositorioLogic/Básico/FONTE/dao-ejb/target/dao-ejb.jar"),
+        ear.addAsModule(new File("/opt/repositorioLogic/Básico/FONTE/dao-ejb/target/dao-ejb.jar"),
                 "dao-ejb.jar")
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-        ear.addAsModule(new File("/home/marcus/Logic/repositorioLogic/Básico/FONTE/financeiro-ejb/target/financeiro-ejb.jar"),
+        ear.addAsModule(new File("/opt/repositorioLogic/Básico/FONTE/financeiro-ejb/target/financeiro-ejb.jar"),
                 "financeiro-ejb.jar")
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 
-        ear.addAsLibrary(new File("/opt/Packages/hsqldb/lib/hsqldb.jar"),
+        ear.addAsLibrary(new File("/opt/repositorioLogic/wildfly/hsqldb/lib/hsqldb.jar"),
                 "hsqldb.jar");
 
         JavaArchive jarTest = ShrinkWrap.create(JavaArchive.class, "treinamento-test-0.0.1-SNAPSHOT.jar")

@@ -16,13 +16,10 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 |-----------------------------------|:-----------:|--------------------------------------------------|
 | dataLancamento                    |     S       | Data do lancamento. Valores: "YYYY-MM-dd"        |
 
-## JSON Request
+## URL Request
 
-~~~json
-{
-	"dataLancamento":"2017-11-26 00:00"
-}
-~~~
+http://localhost:8080/Treinamento/v1/lancamentos/findByPeriodo?periodo=2018-01-31
+
 
 ## Response
 
@@ -30,7 +27,7 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 [{
    "idLancamento": 2,
    "descricaoLancamento": "Teste",
-   "dataLancamento": "2017-11-26 18:57",
+   "dataLancamento": "2017-11-26",
    "valorLancamento": 10.5,
    "idTipoLancamento": 1
 }]

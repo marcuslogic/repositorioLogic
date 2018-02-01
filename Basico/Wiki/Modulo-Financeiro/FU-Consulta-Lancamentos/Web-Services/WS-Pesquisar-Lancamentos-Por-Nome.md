@@ -21,7 +21,7 @@ Pesquisa de lançamentos por parte do nome do lançamento
 
 ~~~json
 {
-	"descricaoLancamento":"Teste"
+	"descricao":"Teste"
 }
 ~~~
 

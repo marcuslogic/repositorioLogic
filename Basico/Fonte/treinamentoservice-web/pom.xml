@@ -87,7 +87,7 @@
                     <wadlFile>${project.build.outputDirectory}/application.wadl
                     </wadlFile>
                     <formatWadlFile>true</formatWadlFile>
-                    <baseUri>http://localhost:8080/Treinamento/saida</baseUri>
+                    <baseUri>http://localhost:8080/Treinamento/v1/lancamentos</baseUri>
                     <packagesResourceConfig>
                         <param>br.com.logic.treinamentoservices.resources</param>
                     </packagesResourceConfig>

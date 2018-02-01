@@ -9,11 +9,11 @@ import java.util.List;
 @Local
 public interface ILancamentoMensalService {
 
-    LancamentoMensalModel incluirLancamentoMensal(LancamentoMensalModel saidaNova) throws Exception;
+    LancamentoMensalModel addLancamentoMensal(LancamentoMensalModel saidaNova) throws Exception;
 
-    LancamentoMensalModel alterarLancamentoMensal(LancamentoMensalModel saidaAlterada) throws Exception;
+    LancamentoMensalModel updateLancamentoMensal(LancamentoMensalModel saidaAlterada) throws Exception;
 
-    Boolean deletarLancamentoMensal(LancamentoMensalModel saidaRemocao) throws Exception;
+    Boolean deleteLancamentoMensal(Integer idLancamento) throws Exception;
 
     List<LancamentoMensalModel> findByPeriodo(String periodo) throws Exception;
 

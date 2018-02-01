@@ -1,0 +1,906 @@
+2018-01-31 00:03:58,068 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/e1/d7f9c24bba6b5a7b31a23d51ac98e7556f320c/content
+2018-01-31 00:03:58,076 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 68) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:03:58,101 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 30ms
+2018-01-31 00:03:58,101 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 31ms
+2018-01-31 00:03:58,104 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 33ms
+2018-01-31 00:03:58,105 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 34ms
+2018-01-31 00:03:58,107 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:03:58,126 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:03:58,127 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:03:58,127 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:03:58,311 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:03:58,370 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:03:58,370 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:03:58,372 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:03:58,374 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:03:58,382 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:03:58,383 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:03:58,384 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:03:58,694 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 68) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:03:58,700 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 68) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:03:58,729 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0016: Replaced deployment "treinamento-ear.ear" with deployment "treinamento-ear.ear"
+2018-01-31 00:03:58,731 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/9a/3499ba513f9034ac4e784b8987c1c2c4c76e66/content
+2018-01-31 00:06:59,012 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0001: Content added at location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/8a/882cd0ba2960b8f0557f5978a876d2dc21e74e/content
+2018-01-31 00:06:59,052 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 74) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:06:59,081 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 66ms
+2018-01-31 00:06:59,082 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 67ms
+2018-01-31 00:06:59,085 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 71ms
+2018-01-31 00:06:59,087 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 72ms
+2018-01-31 00:06:59,089 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:06:59,098 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:06:59,099 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:06:59,099 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:06:59,194 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:06:59,208 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:06:59,208 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:06:59,212 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:06:59,212 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:06:59,213 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:06:59,219 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:06:59,221 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:06:59,517 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 78) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:06:59,523 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 78) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:06:59,545 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "treinamento-ear.ear" with deployment "treinamento-ear.ear"
+2018-01-31 00:06:59,547 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0002: Content removed from location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/e1/d7f9c24bba6b5a7b31a23d51ac98e7556f320c/content
+2018-01-31 00:08:24,660 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/a3/b536acc26c903af7b1d0bd654735147cf7f9e3/content
+2018-01-31 00:08:24,663 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 78) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:08:24,704 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 43ms
+2018-01-31 00:08:24,706 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 44ms
+2018-01-31 00:08:24,706 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 44ms
+2018-01-31 00:08:24,707 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 45ms
+2018-01-31 00:08:24,708 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:08:24,721 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:08:24,721 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:08:24,721 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:08:24,902 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:08:24,931 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:08:24,936 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:08:24,941 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:08:24,944 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:08:24,945 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:08:24,951 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:08:24,953 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:08:25,331 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 82) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:08:25,336 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:08:25,351 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0016: Replaced deployment "treinamento-ear.ear" with deployment "treinamento-ear.ear"
+2018-01-31 00:08:25,352 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/8a/882cd0ba2960b8f0557f5978a876d2dc21e74e/content
+2018-01-31 00:09:05,419 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/dc/c45a21b1bbd83327f89c989f8848c827d0f30b/content
+2018-01-31 00:09:05,422 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:09:05,449 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 29ms
+2018-01-31 00:09:05,450 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 29ms
+2018-01-31 00:09:05,452 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 32ms
+2018-01-31 00:09:05,454 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 33ms
+2018-01-31 00:09:05,457 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:09:05,478 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:09:05,478 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:09:05,478 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:09:05,681 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:09:05,720 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:09:05,722 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:09:05,725 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-5) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:09:05,727 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:09:05,730 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:09:05,752 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:09:05,754 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:09:06,231 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 91) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:09:06,236 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 91) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:09:06,252 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0016: Replaced deployment "treinamento-ear.ear" with deployment "treinamento-ear.ear"
+2018-01-31 00:09:06,253 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0002: Content removed from location /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content/a3/b536acc26c903af7b1d0bd654735147cf7f9e3/content
+2018-01-31 00:10:09,986 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-01-31 00:10:10,002 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 00:10:10,002 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 91) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:10:10,020 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0019: Host default-host stopping
+2018-01-31 00:10:10,023 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-01-31 00:10:10,040 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0010: Unbound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 00:10:10,043 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@30c24fb)
+2018-01-31 00:10:10,043 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@dcbdaea)
+2018-01-31 00:10:10,043 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@9f44f8b)
+2018-01-31 00:10:10,043 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@4cf6d0d1)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@2ebf1e48)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@7d709dff)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@56d30dcd)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@2cd92f9e)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@7ac23913)
+2018-01-31 00:10:10,044 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 103) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@3a4ccd1)
+2018-01-31 00:10:10,060 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 69ms
+2018-01-31 00:10:10,064 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 74ms
+2018-01-31 00:10:10,066 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 76ms
+2018-01-31 00:10:10,067 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 78ms
+2018-01-31 00:10:10,105 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 99) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2018-01-31 00:10:10,350 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = hsqldb.jar
+2018-01-31 00:10:10,353 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment hsqldb.jar (runtime-name: hsqldb.jar) in 363ms
+2018-01-31 00:10:10,354 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTPS listener https suspending
+2018-01-31 00:10:10,354 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2018-01-31 00:10:10,355 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0008: Undertow HTTP listener default suspending
+2018-01-31 00:10:10,357 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-01-31 00:10:10,358 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0004: Undertow 1.4.18.Final stopping
+2018-01-31 00:10:10,376 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) stopped in 361ms
+2018-01-31 00:15:00,326 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.1.Final
+2018-01-31 00:15:00,729 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+2018-01-31 00:15:00,898 INFO  [org.jboss.as] (MSC service thread 1-8) WFLYSRV0049: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) starting
+2018-01-31 00:15:00,899 DEBUG [org.jboss.as.config] (MSC service thread 1-8) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/marcus/Treinamentos/servidores/wildfly/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_161-b14
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b14
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/marcus/Treinamentos/servidores/wildfly
+	jboss.host.name = allspark
+	jboss.modules.dir = /home/marcus/Treinamentos/servidores/wildfly/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = allspark
+	jboss.qualified.host.name = allspark
+	jboss.server.base.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone
+	jboss.server.config.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/configuration
+	jboss.server.data.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/data
+	jboss.server.deploy.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content
+	jboss.server.log.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/log
+	jboss.server.name = allspark
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/marcus/Treinamentos/servidores/wildfly/standalone/configuration/logging.properties
+	module.path = /home/marcus/Treinamentos/servidores/wildfly/modules
+	org.jboss.boot.log.file = /home/marcus/Treinamentos/servidores/wildfly/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.14.14-300.fc27.x86_64
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/marcus/Treinamentos/servidores/wildfly/jboss-modules.jar -mp /home/marcus/Treinamentos/servidores/wildfly/modules org.jboss.as.standalone -Djboss.home.dir=/home/marcus/Treinamentos/servidores/wildfly -Djboss.server.base.dir=/home/marcus/Treinamentos/servidores/wildfly/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = BR
+	user.dir = /home/marcus/Treinamentos/servidores/wildfly/bin
+	user.home = /home/marcus
+	user.language = pt
+	user.name = marcus
+	user.timezone = America/Sao_Paulo
+2018-01-31 00:15:00,900 DEBUG [org.jboss.as.config] (MSC service thread 1-8) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n -Dorg.jboss.boot.log.file=/home/marcus/Treinamentos/servidores/wildfly/standalone/log/server.log -Dlogging.configuration=file:/home/marcus/Treinamentos/servidores/wildfly/standalone/configuration/logging.properties 
+2018-01-31 00:15:02,775 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2018-01-31 00:15:02,822 INFO  [org.wildfly.security] (ServerService Thread Pool -- 20) ELY00001: WildFly Elytron version 1.1.6.Final
+2018-01-31 00:15:02,861 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 29) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2018-01-31 00:15:03,027 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2018-01-31 00:15:03,053 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.5.4.Final
+2018-01-31 00:15:03,062 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.5.4.Final
+2018-01-31 00:15:03,117 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 42) WFLYCLINF0001: Activating Infinispan subsystem.
+2018-01-31 00:15:03,122 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 41) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-01-31 00:15:03,132 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 43) WFLYRS0016: RESTEasy version 3.0.24.Final
+2018-01-31 00:15:03,180 INFO  [org.jboss.as.connector] (MSC service thread 1-7) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.6.Final)
+2018-01-31 00:15:03,218 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 36) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2018-01-31 00:15:03,221 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0018: Started Driver service with driver-name = h2
+2018-01-31 00:15:03,230 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 50) WFLYNAM0001: Activating Naming Subsystem
+2018-01-31 00:15:03,235 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 48) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2018-01-31 00:15:03,248 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 5.0.5.Final
+2018-01-31 00:15:03,366 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 60) WFLYWS0002: Activating WebServices Extension
+2018-01-31 00:15:03,378 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 58) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2018-01-31 00:15:03,400 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 57) WFLYSEC0002: Activating Security Subsystem
+2018-01-31 00:15:03,444 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2018-01-31 00:15:03,445 INFO  [org.jboss.as.security] (MSC service thread 1-4) WFLYSEC0001: Current PicketBox version=5.0.2.Final
+2018-01-31 00:15:03,450 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0003: Undertow 1.4.18.Final starting
+2018-01-31 00:15:03,451 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2018-01-31 00:15:03,671 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2018-01-31 00:15:03,672 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2018-01-31 00:15:03,784 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0014: Creating file handler for path '/home/marcus/Treinamentos/servidores/wildfly/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2018-01-31 00:15:03,792 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0012: Started server default-server.
+2018-01-31 00:15:03,797 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2018-01-31 00:15:03,935 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: EJB subsystem suspension complete
+2018-01-31 00:15:03,944 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2018-01-31 00:15:04,463 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2018-01-31 00:15:04,503 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) WFLYDS0013: Started FileSystemDeploymentService for directory /home/marcus/Treinamentos/servidores/wildfly/standalone/deployments
+2018-01-31 00:15:04,515 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "hsqldb.jar" (runtime-name: "hsqldb.jar")
+2018-01-31 00:15:04,515 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:15:04,593 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 00:15:04,678 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:15:04,678 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:15:04,679 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:15:04,796 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2018-01-31 00:15:04,877 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.1.9.Final (Apache CXF 3.1.12) 
+2018-01-31 00:15:05,452 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2018-01-31 00:15:05,497 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = hsqldb.jar
+2018-01-31 00:15:05,513 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 00:15:05,758 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:15:05,868 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-4) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.8.Final
+2018-01-31 00:15:05,906 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 5.3.5.Final
+2018-01-31 00:15:06,163 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:15:06,167 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:15:06,174 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:15:06,180 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:15:06,180 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:15:06,264 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:15:06,272 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-6) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:15:06,392 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.4.3 (Final)
+2018-01-31 00:15:06,855 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started client-mappings cache from ejb container
+2018-01-31 00:15:08,762 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 64) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:15:08,884 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 64) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:15:08,953 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "hsqldb.jar" (runtime-name : "hsqldb.jar")
+2018-01-31 00:15:08,954 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "treinamento-ear.ear" (runtime-name : "treinamento-ear.ear")
+2018-01-31 00:15:09,081 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2018-01-31 00:15:09,084 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2018-01-31 00:15:09,085 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2018-01-31 00:15:09,085 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) started in 9229ms - Started 694 of 924 services (366 services are lazy, passive or on-demand)
+2018-01-31 00:15:13,486 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose start
+2018-01-31 00:15:13,487 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose synched
+2018-01-31 00:15:13,562 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose script done
+2018-01-31 00:15:13,653 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose end
+2018-01-31 00:20:26,008 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-01-31 00:20:26,035 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 00:20:26,067 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 17) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:20:26,093 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-01-31 00:20:26,116 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0019: Host default-host stopping
+2018-01-31 00:20:26,129 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 00:20:26,133 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 74) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@7b0b506e)
+2018-01-31 00:20:26,137 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 68) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2018-01-31 00:20:26,149 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 129ms
+2018-01-31 00:20:26,150 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 132ms
+2018-01-31 00:20:26,152 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 134ms
+2018-01-31 00:20:26,153 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 139ms
+2018-01-31 00:20:26,218 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = hsqldb.jar
+2018-01-31 00:20:26,220 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTPS listener https suspending
+2018-01-31 00:20:26,220 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTP listener default suspending
+2018-01-31 00:20:26,221 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2018-01-31 00:20:26,221 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-01-31 00:20:26,221 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 1.4.18.Final stopping
+2018-01-31 00:20:26,223 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment hsqldb.jar (runtime-name: hsqldb.jar) in 204ms
+2018-01-31 00:20:26,230 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0050: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) stopped in 153ms
+2018-01-31 00:25:45,584 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.1.Final
+2018-01-31 00:25:46,003 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+2018-01-31 00:25:46,172 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) starting
+2018-01-31 00:25:46,173 DEBUG [org.jboss.as.config] (MSC service thread 1-7) Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /home/marcus/Treinamentos/servidores/wildfly/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.net.preferIPv4Stack = true
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_161-b14
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.8.0_161
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 25.161-b14
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = /home/marcus/Treinamentos/servidores/wildfly
+	jboss.host.name = allspark
+	jboss.modules.dir = /home/marcus/Treinamentos/servidores/wildfly/modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = allspark
+	jboss.qualified.host.name = allspark
+	jboss.server.base.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone
+	jboss.server.config.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/configuration
+	jboss.server.data.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/data
+	jboss.server.deploy.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/data/content
+	jboss.server.log.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/log
+	jboss.server.name = allspark
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /home/marcus/Treinamentos/servidores/wildfly/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/home/marcus/Treinamentos/servidores/wildfly/standalone/configuration/logging.properties
+	module.path = /home/marcus/Treinamentos/servidores/wildfly/modules
+	org.jboss.boot.log.file = /home/marcus/Treinamentos/servidores/wildfly/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 4.14.14-300.fc27.x86_64
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.fc27.x86_64/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /home/marcus/Treinamentos/servidores/wildfly/jboss-modules.jar -mp /home/marcus/Treinamentos/servidores/wildfly/modules org.jboss.as.standalone -Djboss.home.dir=/home/marcus/Treinamentos/servidores/wildfly -Djboss.server.base.dir=/home/marcus/Treinamentos/servidores/wildfly/standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = BR
+	user.dir = /home/marcus/Treinamentos/servidores/wildfly/bin
+	user.home = /home/marcus
+	user.language = pt
+	user.name = marcus
+	user.timezone = America/Sao_Paulo
+2018-01-31 00:25:46,174 DEBUG [org.jboss.as.config] (MSC service thread 1-7) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n -Dorg.jboss.boot.log.file=/home/marcus/Treinamentos/servidores/wildfly/standalone/log/server.log -Dlogging.configuration=file:/home/marcus/Treinamentos/servidores/wildfly/standalone/configuration/logging.properties 
+2018-01-31 00:25:48,023 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2018-01-31 00:25:48,047 INFO  [org.wildfly.security] (ServerService Thread Pool -- 8) ELY00001: WildFly Elytron version 1.1.6.Final
+2018-01-31 00:25:48,184 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 29) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2018-01-31 00:25:48,250 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2018-01-31 00:25:48,269 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.5.4.Final
+2018-01-31 00:25:48,292 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.5.4.Final
+2018-01-31 00:25:48,361 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 42) WFLYCLINF0001: Activating Infinispan subsystem.
+2018-01-31 00:25:48,363 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 50) WFLYNAM0001: Activating Naming Subsystem
+2018-01-31 00:25:48,389 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 41) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-01-31 00:25:48,403 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 43) WFLYRS0016: RESTEasy version 3.0.24.Final
+2018-01-31 00:25:48,426 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 58) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2018-01-31 00:25:48,459 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 48) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2018-01-31 00:25:48,460 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 36) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2018-01-31 00:25:48,464 INFO  [org.jboss.as.connector] (MSC service thread 1-7) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.6.Final)
+2018-01-31 00:25:48,483 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 60) WFLYWS0002: Activating WebServices Extension
+2018-01-31 00:25:48,491 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: Started Driver service with driver-name = h2
+2018-01-31 00:25:48,507 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 57) WFLYSEC0002: Activating Security Subsystem
+2018-01-31 00:25:48,510 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=5.0.2.Final
+2018-01-31 00:25:48,519 INFO  [org.jboss.as.naming] (MSC service thread 1-6) WFLYNAM0003: Starting Naming Service
+2018-01-31 00:25:48,524 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2018-01-31 00:25:48,543 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0003: Undertow 1.4.18.Final starting
+2018-01-31 00:25:48,642 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.5.Final
+2018-01-31 00:25:48,832 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2018-01-31 00:25:48,833 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2018-01-31 00:25:48,977 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0014: Creating file handler for path '/home/marcus/Treinamentos/servidores/wildfly/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2018-01-31 00:25:48,987 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0012: Started server default-server.
+2018-01-31 00:25:48,990 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2018-01-31 00:25:49,123 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2018-01-31 00:25:49,271 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+2018-01-31 00:25:49,334 INFO  [org.jboss.as.patching] (MSC service thread 1-4) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2018-01-31 00:25:49,373 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /home/marcus/Treinamentos/servidores/wildfly/standalone/deployments
+2018-01-31 00:25:49,386 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "hsqldb.jar" (runtime-name: "hsqldb.jar")
+2018-01-31 00:25:49,386 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 00:25:49,496 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 00:25:49,565 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 00:25:49,565 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 00:25:49,565 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 00:25:49,760 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2018-01-31 00:25:49,987 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.1.9.Final (Apache CXF 3.1.12) 
+2018-01-31 00:25:51,084 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2018-01-31 00:25:51,126 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = hsqldb.jar
+2018-01-31 00:25:51,133 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 00:25:51,431 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 00:25:51,628 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-6) HV000001: Hibernate Validator 5.3.5.Final
+2018-01-31 00:25:51,820 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.8.Final
+2018-01-31 00:25:52,007 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 00:25:52,020 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 00:25:52,021 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 00:25:52,023 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 00:25:52,027 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 00:25:52,086 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 00:25:52,089 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 00:25:52,209 INFO  [org.jboss.weld.Version] (MSC service thread 1-4) WELD-000900: 2.4.3 (Final)
+2018-01-31 00:25:53,231 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started client-mappings cache from ejb container
+2018-01-31 00:25:54,776 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 66) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 00:25:54,833 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 66) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 00:25:54,849 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "hsqldb.jar" (runtime-name : "hsqldb.jar")
+2018-01-31 00:25:54,850 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "treinamento-ear.ear" (runtime-name : "treinamento-ear.ear")
+2018-01-31 00:25:54,926 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2018-01-31 00:25:54,937 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2018-01-31 00:25:54,939 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2018-01-31 00:25:54,941 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) started in 9740ms - Started 694 of 924 services (366 services are lazy, passive or on-demand)
+2018-01-31 00:26:03,388 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose start
+2018-01-31 00:26:03,388 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose synched
+2018-01-31 00:26:03,449 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose script done
+2018-01-31 00:26:03,517 INFO  [hsqldb.db.HSQLDB5FF579EAFE.ENGINE] (default task-3) checkpointClose end
+2018-01-31 00:27:34,369 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-01-31 00:27:34,407 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 00:27:34,440 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 66) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 00:27:34,455 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-01-31 00:27:34,471 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0019: Host default-host stopping
+2018-01-31 00:27:34,513 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 00:27:34,519 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 75) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@3bcda36d)
+2018-01-31 00:27:34,532 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 148ms
+2018-01-31 00:27:34,532 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 149ms
+2018-01-31 00:27:34,534 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 151ms
+2018-01-31 00:27:34,540 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 164ms
+2018-01-31 00:27:34,565 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2018-01-31 00:27:34,615 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0019: Stopped Driver service with driver-name = hsqldb.jar
+2018-01-31 00:27:34,618 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTPS listener https suspending
+2018-01-31 00:27:34,619 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+2018-01-31 00:27:34,619 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2018-01-31 00:27:34,620 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0028: Stopped deployment hsqldb.jar (runtime-name: hsqldb.jar) in 237ms
+2018-01-31 00:27:34,623 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-01-31 00:27:34,626 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 1.4.18.Final stopping
+2018-01-31 00:27:34,650 INFO  [org.jboss.as] (MSC service thread 1-5) WFLYSRV0050: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) stopped in 228ms
+2018-01-31 23:46:32,402 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 5.0.5.Final
+2018-01-31 23:46:32,408 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 42) WFLYCLINF0001: Activating Infinispan subsystem.
+2018-01-31 23:46:32,412 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 43) WFLYRS0016: RESTEasy version 3.0.24.Final
+2018-01-31 23:46:32,403 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 41) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2018-01-31 23:46:32,423 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 36) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2018-01-31 23:46:32,481 INFO  [org.jboss.as.connector] (MSC service thread 1-5) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.6.Final)
+2018-01-31 23:46:32,484 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+2018-01-31 23:46:32,521 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 48) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2018-01-31 23:46:32,525 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 50) WFLYNAM0001: Activating Naming Subsystem
+2018-01-31 23:46:32,531 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 57) WFLYSEC0002: Activating Security Subsystem
+2018-01-31 23:46:32,536 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=5.0.2.Final
+2018-01-31 23:46:32,578 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 58) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2018-01-31 23:46:32,640 INFO  [org.jboss.as.naming] (MSC service thread 1-7) WFLYNAM0003: Starting Naming Service
+2018-01-31 23:46:32,653 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2018-01-31 23:46:32,664 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 60) WFLYWS0002: Activating WebServices Extension
+2018-01-31 23:46:32,703 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 1.4.18.Final starting
+2018-01-31 23:46:32,741 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 16 (per class), which is derived from the number of CPUs on this host.
+2018-01-31 23:46:32,743 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 64 (per class), which is derived from thread worker pool sizing.
+2018-01-31 23:46:32,987 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 59) WFLYUT0014: Creating file handler for path '/home/marcus/Treinamentos/repositorioLogic/wildfly/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2018-01-31 23:46:32,993 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2018-01-31 23:46:32,996 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2018-01-31 23:46:33,158 INFO  [org.jboss.as.ejb3] (MSC service thread 1-7) WFLYEJB0493: EJB subsystem suspension complete
+2018-01-31 23:46:33,163 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2018-01-31 23:46:33,258 INFO  [org.jboss.as.patching] (MSC service thread 1-5) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2018-01-31 23:46:33,334 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/deployments
+2018-01-31 23:46:33,334 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2018-01-31 23:46:33,344 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 23:46:33,345 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "hsqldb.jar" (runtime-name: "hsqldb.jar")
+2018-01-31 23:46:33,515 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 23:46:33,515 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 23:46:33,515 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 23:46:33,684 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2018-01-31 23:46:33,782 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.1.9.Final (Apache CXF 3.1.12) 
+2018-01-31 23:46:34,082 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0004: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.4)
+2018-01-31 23:46:34,164 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = hsqldb.jar
+2018-01-31 23:46:34,172 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/TreinamentoDS]
+2018-01-31 23:46:34,412 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-3) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.8.Final
+2018-01-31 23:46:34,543 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 23:46:34,642 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-5) HV000001: Hibernate Validator 5.3.5.Final
+2018-01-31 23:46:35,094 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 23:46:35,101 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 23:46:35,103 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 23:46:35,111 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 23:46:35,121 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 23:46:35,123 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 23:46:35,126 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 23:46:35,211 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started client-mappings cache from ejb container
+2018-01-31 23:46:35,248 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 2.4.3 (Final)
+2018-01-31 23:46:37,141 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 66) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 23:46:37,241 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 66) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 23:46:37,270 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "hsqldb.jar" (runtime-name : "hsqldb.jar")
+2018-01-31 23:46:37,275 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 37) WFLYSRV0010: Deployed "treinamento-ear.ear" (runtime-name : "treinamento-ear.ear")
+2018-01-31 23:46:37,415 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2018-01-31 23:46:37,420 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2018-01-31 23:46:37,421 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2018-01-31 23:46:37,422 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) started in 8220ms - Started 694 of 924 services (366 services are lazy, passive or on-demand)
+2018-01-31 23:59:34,970 ERROR [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0011: The deployment scanner found a directory named META-INF that was not inside a directory whose name ends with .ear, .jar, .rar, .sar or .war. This is likely the result of unzipping an archive directly inside the /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/deployments directory, which is a user error. The META-INF directory will not be scanned for deployments, but it is possible that the scanner may find other files from the unzipped archive and attempt to deploy them, leading to errors.
+2018-01-31 23:59:34,991 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/data/content/cd/3971213beaebfda21a3c9bf4aa19feef26f55f/content
+2018-01-31 23:59:34,997 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/data/content/67/d0fbc2fabc948da549afc4cda65b56e8a1895f/content
+2018-01-31 23:59:35,001 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 2) WFLYDR0001: Content added at location /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/data/content/70/2edb90d19cd207ad3bc998ba961a7a4538ef8f/content
+2018-01-31 23:59:35,006 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0027: Starting deployment of "treinamentoservice-web.war" (runtime-name: "treinamentoservice-web.war")
+2018-01-31 23:59:35,006 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "dao-ejb.jar" (runtime-name: "dao-ejb.jar")
+2018-01-31 23:59:35,006 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "financeiro-ejb.jar" (runtime-name: "financeiro-ejb.jar")
+2018-01-31 23:59:35,069 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC000001: Failed to start service jboss.deployment.unit."financeiro-ejb.jar".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."financeiro-ejb.jar".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "financeiro-ejb.jar"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:172)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:2032)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1955)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.RuntimeException: WFLYSRV0177: Error getting reflective information for class br.com.logic.financeiro.service.LancamentoMensalService with ClassLoader ModuleClassLoader for Module "deployment.financeiro-ejb.jar" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:78)
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:57)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:106)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:91)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:76)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:165)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: Lbr/com/logic/dao/interfaces/ILancamentoMensalBean;
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583)
+	at java.lang.Class.getDeclaredFields(Class.java:1916)
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:72)
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:70)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: br.com.logic.dao.interfaces.ILancamentoMensalBean from [Module "deployment.financeiro-ejb.jar" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:198)
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:412)
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:400)
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:116)
+	... 15 more
+
+2018-01-31 23:59:35,089 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 23:59:35,095 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'deployment "dao-ejb.jar"' are as follows:
+
+	java:global/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 23:59:35,095 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'deployment "dao-ejb.jar"' are as follows:
+
+	java:global/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 23:59:35,342 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-5) MSC000001: Failed to start service jboss.deployment.unit."treinamentoservice-web.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."treinamentoservice-web.war".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "treinamentoservice-web.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:172)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:2032)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1955)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.RuntimeException: WFLYSRV0177: Error getting reflective information for class br.com.logic.treinamentoservices.resources.LancamentoMensalResource with ClassLoader ModuleClassLoader for Module "deployment.treinamentoservice-web.war" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:78)
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:57)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:106)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:91)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:76)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:165)
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: Lbr/com/logic/financeiro/interfaces/ILancamentoMensalService;
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583)
+	at java.lang.Class.getDeclaredFields(Class.java:1916)
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:72)
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:70)
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: br.com.logic.financeiro.interfaces.ILancamentoMensalService from [Module "deployment.treinamentoservice-web.war" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:198)
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:412)
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:400)
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:116)
+	... 15 more
+
+2018-01-31 23:59:35,345 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "treinamentoservice-web.war")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"treinamentoservice-web.war\".POST_MODULE" => "WFLYSRV0153: Failed to process phase POST_MODULE of deployment \"treinamentoservice-web.war\"
+    Caused by: java.lang.RuntimeException: WFLYSRV0177: Error getting reflective information for class br.com.logic.treinamentoservices.resources.LancamentoMensalResource with ClassLoader ModuleClassLoader for Module \"deployment.treinamentoservice-web.war\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: Lbr/com/logic/financeiro/interfaces/ILancamentoMensalService;
+    Caused by: java.lang.ClassNotFoundException: br.com.logic.financeiro.interfaces.ILancamentoMensalService from [Module \"deployment.treinamentoservice-web.war\" from Service Module Loader]"}}
+2018-01-31 23:59:35,346 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "financeiro-ejb.jar")]) - failure description: {"WFLYCTL0080: Failed services" => {"jboss.deployment.unit.\"financeiro-ejb.jar\".POST_MODULE" => "WFLYSRV0153: Failed to process phase POST_MODULE of deployment \"financeiro-ejb.jar\"
+    Caused by: java.lang.RuntimeException: WFLYSRV0177: Error getting reflective information for class br.com.logic.financeiro.service.LancamentoMensalService with ClassLoader ModuleClassLoader for Module \"deployment.financeiro-ejb.jar\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: Lbr/com/logic/dao/interfaces/ILancamentoMensalBean;
+    Caused by: java.lang.ClassNotFoundException: br.com.logic.dao.interfaces.ILancamentoMensalBean from [Module \"deployment.financeiro-ejb.jar\" from Service Module Loader]"}}
+2018-01-31 23:59:35,431 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "dao-ejb.jar" (runtime-name : "dao-ejb.jar")
+2018-01-31 23:59:35,431 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "financeiro-ejb.jar" (runtime-name : "financeiro-ejb.jar")
+2018-01-31 23:59:35,431 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "treinamentoservice-web.war" (runtime-name : "treinamentoservice-web.war")
+2018-01-31 23:59:35,432 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."financeiro-ejb.jar".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "financeiro-ejb.jar"
+      service jboss.deployment.unit."treinamentoservice-web.war".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "treinamentoservice-web.war"
+
+2018-01-31 23:59:45,528 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0001: Content added at location /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/data/content/8c/56cdef95438de402d1122891e5b853cc1adc09/content
+2018-01-31 23:59:45,575 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 70) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-01-31 23:59:45,630 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 75ms
+2018-01-31 23:59:45,631 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 75ms
+2018-01-31 23:59:45,631 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 75ms
+2018-01-31 23:59:45,633 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 80ms
+2018-01-31 23:59:45,636 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "treinamento-ear.ear" (runtime-name: "treinamento-ear.ear")
+2018-01-31 23:59:45,650 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) WFLYSRV0207: Starting subdeployment (runtime-name: "treinamentoservice-web.war")
+2018-01-31 23:59:45,650 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "dao-ejb.jar")
+2018-01-31 23:59:45,649 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "financeiro-ejb.jar")
+2018-01-31 23:59:45,819 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment treinamento-ear.ear
+2018-01-31 23:59:45,839 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment financeiro-ejb.jar
+2018-01-31 23:59:45,841 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalService' in deployment unit 'subdeployment "financeiro-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:module/LancamentoMensalService!br.com.logic.financeiro.interfaces.ILancamentoMensalService
+	java:global/treinamento-ear/financeiro-ejb/LancamentoMensalService
+	java:app/financeiro-ejb/LancamentoMensalService
+	java:module/LancamentoMensalService
+
+2018-01-31 23:59:45,844 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment treinamentoservice-web.war
+2018-01-31 23:59:45,846 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment dao-ejb.jar
+2018-01-31 23:59:45,848 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-1) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalResource' in deployment unit 'subdeployment "treinamentoservice-web.war" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:module/LancamentoMensalResource!br.com.logic.treinamentoservices.interfaces.ILancamentoMensalResource
+	java:global/treinamento-ear/treinamentoservice-web/LancamentoMensalResource
+	java:app/treinamentoservice-web/LancamentoMensalResource
+	java:module/LancamentoMensalResource
+
+2018-01-31 23:59:45,849 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'ConnectBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:app/dao-ejb/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:module/ConnectBean!br.com.logic.dao.interfaces.IConnectBean
+	java:global/treinamento-ear/dao-ejb/ConnectBean
+	java:app/dao-ejb/ConnectBean
+	java:module/ConnectBean
+
+2018-01-31 23:59:45,852 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'LancamentoMensalBean' in deployment unit 'subdeployment "dao-ejb.jar" of deployment "treinamento-ear.ear"' are as follows:
+
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:module/LancamentoMensalBean!br.com.logic.dao.interfaces.ILancamentoMensalBean
+	java:global/treinamento-ear/dao-ejb/LancamentoMensalBean
+	java:app/dao-ejb/LancamentoMensalBean
+	java:module/LancamentoMensalBean
+
+2018-01-31 23:59:46,308 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 74) RESTEASY002225: Deploying javax.ws.rs.core.Application: class br.com.logic.treinamentoservices.endpoint.TreinamentoEndpoint$Proxy$_$$_WeldClientProxy
+2018-01-31 23:59:46,327 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 74) WFLYUT0021: Registered web context: '/Treinamento' for server 'default-server'
+2018-01-31 23:59:46,357 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "treinamento-ear.ear" with deployment "treinamento-ear.ear"
+2018-01-31 23:59:46,357 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) WFLYCTL0183: Service status report
+WFLYCTL0186:   Services which failed to start:      service jboss.deployment.unit."financeiro-ejb.jar".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "financeiro-ejb.jar"
+      service jboss.deployment.unit."treinamentoservice-web.war".POST_MODULE: WFLYSRV0153: Failed to process phase POST_MODULE of deployment "treinamentoservice-web.war"
+
+2018-01-31 23:59:46,359 INFO  [org.jboss.as.repository] (DeploymentScanner-threads - 1) WFLYDR0002: Content removed from location /home/marcus/Treinamentos/repositorioLogic/wildfly/standalone/data/content/dc/c45a21b1bbd83327f89c989f8848c827d0f30b/content

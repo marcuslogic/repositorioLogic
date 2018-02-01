@@ -4,7 +4,7 @@
     <defaultProtocol type="Servlet 3.0"/>
     <container qualifier="jboss" default="true">
         <configuration>
-            <property name="jbossHome">/opt/Packages/testewildfly</property>
+            <property name="jbossHome">/opt/testewildfly</property>
             <property name="serverConfig">standalone.xml</property>
             <property name="managementAddress">127.0.0.1</property>
             <property name="managementPort">9991</property>

@@ -19,13 +19,9 @@ Pesquisa de lançamentos por tipo de lançamento
 
 ## Demais Validações
 
-## JSON Request
+## URL Request
 
-~~~xml
-{
-	"idTipoLancamento":1
-}
-~~~
+http://localhost:8080/Treinamento/v1/lancamentos/findByTipo?tipo=1
 
 ## Response
 

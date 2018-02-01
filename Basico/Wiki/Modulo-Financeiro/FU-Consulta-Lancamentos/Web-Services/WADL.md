@@ -9,7 +9,6 @@
 
 ~~~xml
 
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
 <application xmlns="http://wadl.dev.java.net/2009/02">
 <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 1.19.4 05/24/2017 03:20 PM"/>
 <doc title="Treinamento WADL" xml:lang="pt-br">
@@ -20,10 +19,9 @@ This XML file does not appear to have any style information associated with it. 
 <doc/>
 </include>
 </grammars>
-<resources base="http://localhost:8080/Treinamento/saida">
-<resource path="/">
-<resource path="incluirLancamentoMensal">
-<method id="incluirLancamentoMensal" name="POST">
+<resources base="http://localhost:8080/Treinamento/v1/lancamentos">
+<resource path="lancamentos">
+<method id="addLancamentoMensal" name="POST">
 <request>
 <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
 </request>
@@ -31,9 +29,7 @@ This XML file does not appear to have any style information associated with it. 
 <representation mediaType="application/json"/>
 </response>
 </method>
-</resource>
-<resource path="alterarLancamentoMensal">
-<method id="alterarLancamentoMensal" name="POST">
+<method id="updateLancamentoMensal" name="POST">
 <request>
 <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
 </request>
@@ -41,41 +37,38 @@ This XML file does not appear to have any style information associated with it. 
 <representation mediaType="application/json"/>
 </response>
 </method>
-</resource>
-<resource path="excluirLancamentoMensal">
-<method id="excluirLancamentoMensal" name="POST">
+<method id="deleteLancamentoMensal" name="DELETE">
 <request>
-<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="lancamento" style="query" type="xs:int"/>
+</request>
+<response>
+<representation mediaType="application/json"/>
+</response>
+</method>
+<resource path="/findByPeriodo">
+<method id="findByPeriodo" name="GET">
+<request>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="periodo" style="query" type="xs:string"/>
 </request>
 <response>
 <representation mediaType="application/json"/>
 </response>
 </method>
 </resource>
-<resource path="pesquisarLancamentoPorPeriodo">
-<method id="pesquisarLancamentoPorPeriodo" name="POST">
+<resource path="/findByDescricao">
+<method id="findByDescricao" name="POST">
 <request>
-<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
+<representation mediaType="application/json"/>
 </request>
 <response>
 <representation mediaType="application/json"/>
 </response>
 </method>
 </resource>
-<resource path="pesquisarLancamentoPorDescricao">
-<method id="pesquisarLancamentoPorDescricao" name="POST">
+<resource path="/findByTipo">
+<method id="findByTipo" name="GET">
 <request>
-<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
-</request>
-<response>
-<representation mediaType="application/json"/>
-</response>
-</method>
-</resource>
-<resource path="pesquisarLancamentoPorTipo">
-<method id="pesquisarLancamentoPorTipo" name="POST">
-<request>
-<ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="lancamentoMensalModel" mediaType="application/json"/>
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="tipo" style="query" type="xs:int"/>
 </request>
 <response>
 <representation mediaType="application/json"/>

@@ -7,7 +7,6 @@ import br.com.logic.dao.model.LancamentoMensalModel;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     private IConnectBean connectBean;
 
     @Override
-    public LancamentoMensalModel incluirLancamentoMensal(LancamentoMensalModel insertLancamentoMensal) throws Exception {
+    public LancamentoMensalModel addLancamentoMensal(LancamentoMensalModel insertLancamentoMensal) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -75,7 +74,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public LancamentoMensalModel alterarLancamentoMensal(LancamentoMensalModel updateLancamentoMensal) throws Exception {
+    public LancamentoMensalModel updateLancamentoMensal(LancamentoMensalModel updateLancamentoMensal) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -122,7 +121,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public Boolean excluirLancamentoMensal(LancamentoMensalModel deleteLancamentoMensal) throws Exception {
+    public Boolean deleteLancamentoMensal(Integer idLancamento) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn = null;
@@ -142,7 +141,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, deleteLancamentoMensal.getIdLancamento());
+            ps.setInt(1, idLancamento);
 
             retornoSql = ps.executeUpdate();
 
@@ -187,7 +186,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setTimestamp(1, Timestamp.valueOf(periodo));
+            ps.setDate(1, Date.valueOf(periodo));
 
             rs = ps.executeQuery();
 
@@ -217,7 +216,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorDescricao(LancamentoMensalModel saidaDescricao) throws Exception {
+    public List<LancamentoMensalModel> findByDescricao(String descricao) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -237,7 +236,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setString(1, "%" + saidaDescricao.getDescricaoLancamento() + "%");
+            ps.setString(1, "%" + descricao + "%");
 
             rs = ps.executeQuery();
 
@@ -267,7 +266,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public ArrayList<LancamentoMensalModel> pesquisarLancamentosPorTipo(LancamentoMensalModel saidaTipo) throws Exception {
+    public ArrayList<LancamentoMensalModel> findByTipo(Integer tipo) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -287,7 +286,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, saidaTipo.getIdTipoLancamento());
+            ps.setInt(1, tipo);
 
             rs = ps.executeQuery();
 
