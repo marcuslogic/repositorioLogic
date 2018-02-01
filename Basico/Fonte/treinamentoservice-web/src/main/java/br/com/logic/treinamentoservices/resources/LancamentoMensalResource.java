@@ -120,11 +120,11 @@ public class LancamentoMensalResource implements ILancamentoMensalResource {
 
     @GET
     @Override
-    public Response find(PesquisaRequest pesquisa) String periodo) {
+    public Response find(LancamentoMensalModel pesquisa) {
 
         try {
 
-            if (pesquisa.nome == null && pesquisa.periodo == null && pesquisa.tipo <= 0) {
+            if (pesquisa.getDescricaoLancamento() == null && pesquisa.getDataLancamento() == null && pesquisa.getIdTipoLancamento() <= 0) {
                 return Response.status(Status.BAD_REQUEST).entity("Obrigatório informar um dado para pesquisa.").build();
             }
 

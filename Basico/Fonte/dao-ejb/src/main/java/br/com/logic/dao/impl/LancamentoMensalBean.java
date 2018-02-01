@@ -46,7 +46,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             ps = conn.prepareStatement(sql, ps.RETURN_GENERATED_KEYS);
 
             ps.setString(1, insertLancamentoMensal.getDescricaoLancamento());
-            ps.setTimestamp(2, Timestamp.valueOf(insertLancamentoMensal.getDataLancamento()));
+            ps.setDate(2, insertLancamentoMensal.getDataLancamento());
             ps.setDouble(3, insertLancamentoMensal.getValorLancamento());
             ps.setInt(4, insertLancamentoMensal.getIdTipoLancamento());
 
@@ -97,7 +97,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             ps = conn.prepareStatement(sql);
 
             ps.setString(1, updateLancamentoMensal.getDescricaoLancamento());
-            ps.setTimestamp(2, Timestamp.valueOf(updateLancamentoMensal.getDataLancamento()));
+            ps.setDate(2, updateLancamentoMensal.getDataLancamento());
             ps.setDouble(3, updateLancamentoMensal.getValorLancamento());
             ps.setInt(4, updateLancamentoMensal.getIdTipoLancamento());
             ps.setInt(5, updateLancamentoMensal.getIdLancamento());
@@ -145,7 +145,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
 
             retornoSql = ps.executeUpdate();
 
-            if(retornoSql != 0) {
+            if (retornoSql != 0) {
                 retorno = Boolean.TRUE;
             }
 
@@ -166,7 +166,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
     }
 
     @Override
-    public List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception {
+    public List<LancamentoMensalModel> find(LancamentoMensalModel pesquisa) throws Exception {
 
         //<editor-fold desc="Variáveis">
         Connection conn;
@@ -174,6 +174,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
         ResultSet rs = null;
         String sql;
         ArrayList<LancamentoMensalModel> lancamentos = new ArrayList<>();
+        int parametros = 1;
         // </editor-fold>
 
         try {
@@ -181,40 +182,43 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
             sql = "Select *" +
                     "\n From LancamentoMensal";
 
-            if(pesquisa.nome != null) {
-              sql += "\n Where descricaoLancamento like ?";
+            if (pesquisa.getDescricaoLancamento() != null) {
+                sql += "\n Where descricaoLancamento like ?";
+                parametros++;
             }
 
-            if(pesquisa.tipo != null) {
-               if(sql.contains("Where")) {
-                 sql += "\n And idTipoLancamento = ?";
-               } else {
-                 sql += "\n Where idTipoLancamento = ?";
-               }
+            if (pesquisa.getIdTipoLancamento() > 0) {
+                if (sql.contains("Where")) {
+                    sql += "\n And idTipoLancamento = ?";
+                } else {
+                    sql += "\n Where idTipoLancamento = ?";
+                }
+                parametros++;
             }
 
-            if(pesquisa.periodo != null){
-              if(sql.contains("Where")) {
-                sql += "\n And dataLancamento = ?";
-              } else {
-                sql += "\n Where dataLancamento = ?";
-              }
+            if (pesquisa.getDataLancamento() != null) {
+                if (sql.contains("Where")) {
+                    sql += "\n And dataLancamento = ?";
+                } else {
+                    sql += "\n Where dataLancamento = ?";
+                }
             }
 
             //<editor-fold desc="Lógica">
             conn = connectBean.getConnection();
             ps = conn.prepareStatement(sql);
 
-            if(pesquisa.nome != null) {
-              ps.setString(1, "%" + descricao + "%");
+            if (pesquisa.getDescricaoLancamento() != null) {
+                ps.setString(1, "%" + pesquisa.getDescricaoLancamento() + "%");
             }
 
-            if(pesquisa.tipo != null) {
-              ps.setInt(1, tipo);
+            if (pesquisa.getIdTipoLancamento() > 0) {
+
+                ps.setInt(pesquisa.getDescricaoLancamento() != null ? 2 : 1, pesquisa.getIdTipoLancamento());
             }
 
-            if(pesquisa.periodo != null) {
-              ps.setDate(1, Date.valueOf(periodo));
+            if (pesquisa.getDataLancamento() != null) {
+                ps.setDate(parametros, pesquisa.getDataLancamento());
             }
 
             rs = ps.executeQuery();
@@ -225,7 +229,7 @@ public class LancamentoMensalBean implements ILancamentoMensalBean {
                 lancamento.setIdTipoLancamento(rs.getInt("idTipoLancamento"));
                 lancamento.setDescricaoLancamento(rs.getString("descricaoLancamento"));
                 lancamento.setValorLancamento(rs.getDouble("valorLancamento"));
-                lancamento.setDataLancamento(LocalDateTime.of((rs.getDate("dataLancamento").toLocalDate()), LocalTime.now()));
+                lancamento.setDataLancamento(rs.getDate("dataLancamento"));
                 lancamentos.add(lancamento);
             }
             //</editor-fold>

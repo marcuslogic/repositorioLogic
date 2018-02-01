@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
@@ -59,7 +60,7 @@ public class DaoTests extends ArquillianUtil {
                 lancamentoMensal.setIdTipoLancamento(rs.getInt("idTipoLancamento"));
                 lancamentoMensal.setDescricaoLancamento(rs.getString("descricaoLancamento"));
                 lancamentoMensal.setValorLancamento(rs.getDouble("valorLancamento"));
-                lancamentoMensal.setDataLancamento(rs.getTimestamp("dataLancamento").toLocalDateTime());
+                lancamentoMensal.setDataLancamento(rs.getDate("dataLancamento"));
             }
             //</editor-fold>
 
@@ -81,7 +82,7 @@ public class DaoTests extends ArquillianUtil {
     public void testaIncluirLancamento() throws Exception {
         LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-01"));
         lancamentoMensal.setDescricaoLancamento("teste integracao");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
@@ -95,7 +96,7 @@ public class DaoTests extends ArquillianUtil {
     public void testaAlterarLancamento() throws Exception {
         LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-01"));
         lancamentoMensal.setDescricaoLancamento("teste integracao");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
@@ -119,7 +120,7 @@ public class DaoTests extends ArquillianUtil {
     public void testaExcluirLancamento() throws Exception {
         LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-01"));
         lancamentoMensal.setDescricaoLancamento("teste integracao");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
@@ -136,97 +137,49 @@ public class DaoTests extends ArquillianUtil {
         ArrayList<LancamentoMensalModel> lancamentosCriados = new ArrayList<>();
         LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
-        lancamentoMensal.setDescricaoLancamento("Pesquisa Data 1");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26));
-        lancamentoMensal.setDescricaoLancamento("Pesquisa Data 2");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-        lancamentosCriados.add(lancamentoMensal);
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26));
-        lancamentoMensal.setDescricaoLancamento("Pesquisa Data 3");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-        lancamentosCriados.add(lancamentoMensal);
-
-        ArrayList<LancamentoMensalModel> lancamentos;
-
-        lancamentos = (ArrayList<LancamentoMensalModel>) lancamentoMensalBean.find(null);
-
-        Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
-
-    }
-
-    @Test
-    public void testaPesquisarLancamentoPorDescricao() throws Exception {
-        ArrayList<LancamentoMensalModel> lancamentosCriados = new ArrayList<>();
-        LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
-        lancamentoMensal.setDescricaoLancamento("Pesquisa");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
-        lancamentoMensal.setDescricaoLancamento("Pesquisa Data");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-        lancamentosCriados.add(lancamentoMensal);
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
-        lancamentoMensal.setDescricaoLancamento("Pesquisa Data");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
-        lancamentoMensal.setValorLancamento(50.50);
-        lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
-        lancamentosCriados.add(lancamentoMensal);
-
-        List<LancamentoMensalModel> lancamentos;
-
-        lancamentos = lancamentoMensalBean.find(null);
-
-        Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
-
-    }
-
-    @Test
-    public void testaPesquisarLancamentoPorTipo() throws Exception {
-        ArrayList<LancamentoMensalModel> lancamentosCriados = new ArrayList<>();
-        LancamentoMensalModel lancamentoMensal = new LancamentoMensalModel();
-
-        lancamentoMensal.setDataLancamento(LocalDateTime.now());
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-01"));
         lancamentoMensal.setDescricaoLancamento("Pesquisa Data 1");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.ALIMENTACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
         lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
+        lancamentosCriados.add(lancamentoMensal);
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-02"));
         lancamentoMensal.setDescricaoLancamento("Pesquisa Data 2");
         lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
         lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
         lancamentosCriados.add(lancamentoMensal);
 
-        lancamentoMensal.setDataLancamento(LocalDateTime.of(2017, 11, 26, 12, 30));
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-03"));
         lancamentoMensal.setDescricaoLancamento("Pesquisa Data 3");
-        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
+        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.LAZER.getCodigo());
         lancamentoMensal.setValorLancamento(50.50);
         lancamentoMensal = lancamentoMensalBean.addLancamentoMensal(lancamentoMensal);
         lancamentosCriados.add(lancamentoMensal);
 
-        List<LancamentoMensalModel> lancamentos;
+        List<LancamentoMensalModel> lancamentos = new ArrayList<>();
 
-        lancamentos = lancamentoMensalBean.find(null);
+        lancamentoMensal = new LancamentoMensalModel();
+        lancamentoMensal.setDataLancamento(Date.valueOf("2018-02-01"));
 
-        Assert.assertEquals(lancamentos.size(), lancamentosCriados.size());
+        lancamentos = lancamentoMensalBean.find(lancamentoMensal);
+
+        Assert.assertEquals(lancamentos.get(0).getDataLancamento(), lancamentoMensal.getDataLancamento());
+
+        lancamentoMensal = new LancamentoMensalModel();
+        lancamentoMensal.setIdTipoLancamento(TipoLancamentoEnum.EDUCACAO.getCodigo());
+
+        lancamentos = lancamentoMensalBean.find(lancamentoMensal);
+
+        Assert.assertEquals(lancamentos.get(0).getIdTipoLancamento(), lancamentoMensal.getIdTipoLancamento());
+
+        lancamentoMensal = new LancamentoMensalModel();
+        lancamentoMensal.setDescricaoLancamento("Pesquisa Data 3");
+
+        lancamentos = lancamentoMensalBean.find(lancamentoMensal);
+
+        Assert.assertEquals(lancamentos.get(0).getDescricaoLancamento(), lancamentoMensal.getDescricaoLancamento());
 
     }
 

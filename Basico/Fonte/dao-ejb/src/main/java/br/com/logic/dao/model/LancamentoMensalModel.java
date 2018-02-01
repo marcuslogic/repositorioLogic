@@ -1,18 +1,11 @@
 package br.com.logic.dao.model;
 
-import br.com.logic.dao.util.JsonDateDeserializer;
-import br.com.logic.dao.util.JsonDateSerializer;
-import br.com.logic.dao.util.LocalDateTimeConverter;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import javax.persistence.Convert;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 @XmlRootElement
 @XmlType(propOrder = {"idLancamento", "descricaoLancamento", "dataLancamento", "valorLancamento", "idTipoLancamento"})
@@ -22,11 +15,8 @@ public class LancamentoMensalModel implements Serializable {
     @NotNull
     private String descricaoLancamento;
 
-    @Convert(converter = LocalDateTimeConverter.class)
-    @JsonDeserialize(using = JsonDateDeserializer.class)
-    @JsonSerialize(using = JsonDateSerializer.class)
     @NotNull
-    private LocalDateTime dataLancamento;
+    private Date dataLancamento;
 
     @NotNull
     private double valorLancamento;
@@ -53,11 +43,11 @@ public class LancamentoMensalModel implements Serializable {
     }
 
     @XmlElement
-    public LocalDateTime getDataLancamento() {
+    public Date getDataLancamento() {
         return dataLancamento;
     }
 
-    public void setDataLancamento(LocalDateTime dataLancamento) {
+    public void setDataLancamento(Date dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 

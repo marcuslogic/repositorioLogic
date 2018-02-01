@@ -34,7 +34,7 @@ public class LancamentoMensalService implements ILancamentoMensalService {
     }
 
     @Override
-    public List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception {
+    public List<LancamentoMensalModel> find(LancamentoMensalModel pesquisa) throws Exception {
 
         return lancamentoMensalBean.find(pesquisa);
     }

@@ -14,5 +14,5 @@ public interface ILancamentoMensalResource {
 
     Response deleteLancamentoMensal(Integer idLancamento);
 
-    Response find(PesquisaRequest pesquisa);
+    Response find(LancamentoMensalModel pesquisa);
 }

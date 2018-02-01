@@ -1397,3 +1397,39 @@ WFLYCTL0186:   Services which failed to start:      service jboss.deployment.uni
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 
+2018-02-01 01:38:23,754 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2018-02-01 01:38:23,778 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 76) WFLYUT0022: Unregistered web context: '/Treinamento' from server 'default-server'
+2018-02-01 01:38:23,778 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2018-02-01 01:38:23,904 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2018-02-01 01:38:23,911 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0019: Host default-host stopping
+2018-02-01 01:38:23,921 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0010: Unbound data source [java:jboss/datasources/TreinamentoDS]
+2018-02-01 01:38:23,925 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@67f4dbda)
+2018-02-01 01:38:23,926 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@47448dff)
+2018-02-01 01:38:23,927 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@d58dc0a)
+2018-02-01 01:38:23,927 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@205c31d8)
+2018-02-01 01:38:23,927 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@61371402)
+2018-02-01 01:38:23,928 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@27f46ae)
+2018-02-01 01:38:23,930 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@490c7267)
+2018-02-01 01:38:23,939 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@81f486f)
+2018-02-01 01:38:23,939 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@5151da6a)
+2018-02-01 01:38:23,940 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@29e3bcd8)
+2018-02-01 01:38:23,940 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@3d66cc9)
+2018-02-01 01:38:23,940 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@717810ec)
+2018-02-01 01:38:23,941 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@2ea51623)
+2018-02-01 01:38:23,941 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@1a946a53)
+2018-02-01 01:38:23,941 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@2a14fdec)
+2018-02-01 01:38:23,942 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@1b5a7732)
+2018-02-01 01:38:23,942 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0208: Stopped subdeployment (runtime-name: treinamentoservice-web.war) in 136ms
+2018-02-01 01:38:23,942 WARN  [org.jboss.jca.core.connectionmanager.pool.strategy.OnePool] (ServerService Thread Pool -- 82) IJ000615: Destroying active connection in pool: TreinamentoDS (org.jboss.jca.adapters.jdbc.local.LocalManagedConnection@1d487e74)
+2018-02-01 01:38:23,943 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0208: Stopped subdeployment (runtime-name: dao-ejb.jar) in 138ms
+2018-02-01 01:38:23,942 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0208: Stopped subdeployment (runtime-name: financeiro-ejb.jar) in 137ms
+2018-02-01 01:38:23,950 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 84) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2018-02-01 01:38:23,947 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment treinamento-ear.ear (runtime-name: treinamento-ear.ear) in 159ms
+2018-02-01 01:38:24,023 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = hsqldb.jar
+2018-02-01 01:38:24,027 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow HTTP listener default suspending
+2018-02-01 01:38:24,027 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTPS listener https suspending
+2018-02-01 01:38:24,028 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2018-02-01 01:38:24,028 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2018-02-01 01:38:24,028 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment hsqldb.jar (runtime-name: hsqldb.jar) in 223ms
+2018-02-01 01:38:24,030 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 1.4.18.Final stopping
+2018-02-01 01:38:24,048 INFO  [org.jboss.as] (MSC service thread 1-6) WFLYSRV0050: WildFly Full 11.0.0.Final (WildFly Core 3.0.8.Final) stopped in 242ms

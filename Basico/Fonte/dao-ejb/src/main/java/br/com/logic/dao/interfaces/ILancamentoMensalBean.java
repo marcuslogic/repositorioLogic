@@ -15,5 +15,5 @@ public interface ILancamentoMensalBean {
 
     Boolean deleteLancamentoMensal(Integer idLancamento) throws Exception;
 
-    List<LancamentoMensalModel> find(PesquisaRequest pesquisa) throws Exception;
+    List<LancamentoMensalModel> find(LancamentoMensalModel pesquisa) throws Exception;
 }
