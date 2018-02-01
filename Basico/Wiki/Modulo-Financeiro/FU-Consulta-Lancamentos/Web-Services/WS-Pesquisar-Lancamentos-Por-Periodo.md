@@ -4,7 +4,7 @@
 [Home](../../../ReadMe.md) :: [Módulo Financeiro](../../Modulo-Financeiro.md) :: [FU-Consulta Lançamentos](../FU-Consulta-Lancamentos.md) :: [WS-Pesquisar Lancamentos por Período](WS-Pesquisar-Lancamentos-Por-Periodo.md)
 
 
-# WebService: Pesquisar Lancamentos por Período
+# WebService: findByPeríodo
 
 ## Descrição
 
@@ -18,7 +18,7 @@ Pesquisa de lançamentos por período de tempo (dia/mês/ano)
 
 ## URL Request
 
-http://localhost:8080/Treinamento/v1/lancamentos/findByPeriodo?periodo=2018-01-31
+http://localhost:8080/Treinamento/v1/lancamentos/findByPeriodo?periodo=2018-01-01
 
 
 ## Response
